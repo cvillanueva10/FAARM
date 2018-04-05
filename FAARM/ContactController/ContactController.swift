@@ -10,6 +10,10 @@ import UIKit
 
 class ContactController: UIViewController {
     
+    // This links this controller to HomeController so that
+    // we can call functions in HomeController properly
+    var homeController: HomeController?
+    
     let headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Get your questions answered"
@@ -79,9 +83,8 @@ class ContactController: UIViewController {
      * in order to email the SFC
      */
     @objc func handleEmail() {
-        let email = "foo@bar.com"
-        if let url = URL(string: "mailto:\(email)") {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        dismiss(animated: true) {
+            self.homeController?.handleContactForm()
         }
     }
     

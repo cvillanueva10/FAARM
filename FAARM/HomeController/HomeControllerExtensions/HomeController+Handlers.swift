@@ -27,13 +27,22 @@ extension HomeController {
         let layout = UICollectionViewFlowLayout()
         let registrarController = RegistrarController(collectionViewLayout: layout)
         present(registrarController, animated: true, completion: nil)
-        
     }
     
     func handleContact() {
         let contactController = ContactController()
         contactController.modalPresentationStyle = .overFullScreen
         contactController.modalTransitionStyle = .crossDissolve
+        contactController.homeController = self
         present(contactController, animated: true, completion: nil)
+    }
+    
+    // This functions pulls up the Contact form
+    // where the user fills out a form regarding their question
+    // and the SFC will receive this information
+    func handleContactForm() {
+        let contactFormController = ContactFormController()
+        present(contactFormController, animated: true, completion: nil)
+        
     }
 }

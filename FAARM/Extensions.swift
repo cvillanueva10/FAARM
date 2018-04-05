@@ -47,3 +47,19 @@ extension UIView {
         }
     }
 }
+
+extension UIViewController {
+    
+    func setupNavBar(imageForLogo: UIImage, viewForAnchor: UIView) -> CustomNavigationView {
+    
+        let customMiniNavBar = CustomNavigationView()
+        customMiniNavBar.logoImageView.image = imageForLogo
+        view.addSubview(customMiniNavBar)
+        customMiniNavBar.anchorMiniNavBar(view: viewForAnchor)
+        
+        return customMiniNavBar
+        
+    }
+    
+    
+}

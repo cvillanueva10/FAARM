@@ -18,9 +18,9 @@ class RegistrarController: UICollectionViewController {
         collectionView.backgroundColor = .ucmBlue
         
         let customNavigationBar = CustomNavigationView()
-        customNavigationBar.faarmLogoImageView.image = #imageLiteral(resourceName: "Registrar Title-1")
+        customNavigationBar.logoImageView.image = #imageLiteral(resourceName: "Registrar Title-1")
         collectionView.addSubview(customNavigationBar)
-        customNavigationBar.anchorNavBar(view: view)
+        customNavigationBar.anchorMiniNavBar(view: view)
         
     }
 }

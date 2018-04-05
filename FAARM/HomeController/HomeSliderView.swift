@@ -11,7 +11,7 @@ import UIKit
 class HomeSliderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
   
     private let cellId = "cellId"
-    let sliderImages = [#imageLiteral(resourceName: "SFC DS-1")]
+    let sliderImages = [#imageLiteral(resourceName: "SFC DS-1"), #imageLiteral(resourceName: "sample")]
     
     // We use this to know how big the screen is
     var screenWidth: CGFloat?
@@ -54,7 +54,7 @@ class HomeSliderView: UIView, UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return sliderImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -65,6 +65,15 @@ class HomeSliderView: UIView, UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: imageSliderView.frame.width, height: imageSliderView.frame.height)
+    }
+    
+    // Spacing functions, WE DONT WANT NO SPACE
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
 

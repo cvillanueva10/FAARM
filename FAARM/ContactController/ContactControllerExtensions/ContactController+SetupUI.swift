@@ -33,7 +33,7 @@ extension ContactController {
         contactButtonsStackView.addArrangedSubview(chatButton)
         contactButtonsStackView.addArrangedSubview(callButton)
         contactButtonsStackView.addArrangedSubview(emailButton)
-        contactButtonsStackView.anchor(top: headerLabel.bottomAnchor, paddingTop: 16, left: view.leftAnchor, paddingLeft: 30, bottom: nil, paddingBotton: 0, right: view.rightAnchor, paddingRight: 30, width: 0, height: 100)
+        contactButtonsStackView.anchor(top: headerLabel.bottomAnchor, paddingTop: 16, left: view.leftAnchor, paddingLeft: 45, bottom: nil, paddingBotton: 0, right: view.rightAnchor, paddingRight: 45, width: 0, height: 100)
         
         // created within extensions
         let chatLabel = createContactLabel(text: "Chat")
@@ -46,8 +46,7 @@ extension ContactController {
         contactLabelsStackView.addArrangedSubview(chatLabel)
         contactLabelsStackView.addArrangedSubview(callLabel)
         contactLabelsStackView.addArrangedSubview(emailLabel)
-        contactLabelsStackView.anchor(top: contactButtonsStackView.bottomAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 30, bottom: nil, paddingBotton: 0, right: view.rightAnchor, paddingRight: 30, width: 0, height: 50)
-        
+        contactLabelsStackView.anchor(top: contactButtonsStackView.bottomAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 45, bottom: nil, paddingBotton: 0, right: view.rightAnchor, paddingRight: 45, width: 0, height: 50)
         
         view.addSubview(dismissButton)
         dismissButton.anchor(top: nil, paddingTop: 0, left: nil, paddingLeft: 0, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBotton: 0, right: view.rightAnchor, paddingRight: 10, width: 75, height: 100)

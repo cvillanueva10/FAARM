@@ -28,8 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        UIApplication.shared.statusBarStyle = .lightContent
         
         let layout = UICollectionViewFlowLayout()
-       //window?.rootViewController = UINavigationController(rootViewController: HomeController(collectionViewLayout: layout))
-        
         window?.rootViewController = HomeController(collectionViewLayout: layout)
         
         

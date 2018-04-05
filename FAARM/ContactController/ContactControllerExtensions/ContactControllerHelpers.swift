@@ -15,7 +15,7 @@ extension ContactController {
         button.setImage(image, for: .normal)
  
         button.addTarget(self, action: handler, for: .touchUpInside)
-        button.contentMode = .scaleAspectFill
+        button.contentMode = .scaleAspectFit
         return button
     }
     
