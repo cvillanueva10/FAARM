@@ -15,7 +15,7 @@ extension ContactController {
         button.setImage(image, for: .normal)
  
         button.addTarget(self, action: handler, for: .touchUpInside)
-        button.contentMode = .scaleAspectFit
+        button.contentMode = .scaleAspectFill
         return button
     }
     
@@ -25,7 +25,7 @@ extension ContactController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 22)
         label.adjustsFontSizeToFitWidth = true
         return label
     }

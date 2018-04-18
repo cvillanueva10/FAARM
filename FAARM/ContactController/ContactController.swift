@@ -45,7 +45,7 @@ class ContactController: UIViewController {
         let sv = UIStackView()
         sv.axis = .horizontal
         sv.distribution = .fillEqually
-        sv.spacing = 5
+        sv.spacing = 15
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
@@ -74,17 +74,12 @@ class ContactController: UIViewController {
         }
     }
     
-    @objc func handleChat() {
-        
-    }
-    
     /*
-     * This function handles opening your mail app
-     * in order to email the SFC
+     *
      */
     @objc func handleEmail() {
         dismiss(animated: true) {
-            self.homeController?.handleContactForm()
+            self.homeController?.handleMessageForm()
         }
     }
     

@@ -29,8 +29,8 @@ class CustomNavigationView: UIView {
     }
     
     func anchorMiniNavBar(view: UIView){
-        let miniNavBarheight = view.frame.height * 0.078
-        self.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: view.rightAnchor, paddingRight: 0, width: 0, height: miniNavBarheight)
+        let miniNavBarheight = view.frame.width * 0.145
+        self.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 0, left: view.safeAreaLayoutGuide.leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: view.safeAreaLayoutGuide.rightAnchor, paddingRight: 0, width: 0, height: miniNavBarheight)
     }
     
     

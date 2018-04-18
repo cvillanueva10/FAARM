@@ -58,6 +58,7 @@ class HomeHeaderCell: UICollectionViewCell {
         // Add Custom navigation bar and anchor it to this UIView
         addSubview(customNavigationBar)
         customNavigationBar.anchorNavBar(view: self)
+      
         
         // Add and anchor the announcements label
         addSubview(announcementsImageView)

@@ -20,7 +20,7 @@ class RegistrarController: UICollectionViewController {
         let customNavigationBar = CustomNavigationView()
         customNavigationBar.logoImageView.image = #imageLiteral(resourceName: "Registrar Title-1")
         collectionView.addSubview(customNavigationBar)
-        customNavigationBar.anchorMiniNavBar(view: view)
+        customNavigationBar.anchorMiniNavBar(view: self.view)
         
     }
 }
