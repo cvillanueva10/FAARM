@@ -20,6 +20,8 @@ extension HomeController {
             handleAdmissions()
         case 2:
             handleRegistrar()
+        case 3:
+            handleNotifications()
         case 4:
             handleCalendar()
         case 5:
@@ -27,6 +29,11 @@ extension HomeController {
         default:
             return
         }
+    }
+    
+    func handleNotifications() {
+        let notificationsController = NotificationsController()
+        present(notificationsController, animated: true, completion: nil)
     }
     
     func handleCalendar() {

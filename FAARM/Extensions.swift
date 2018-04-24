@@ -46,6 +46,14 @@ extension UIView {
             self.heightAnchor.constraint(equalToConstant: height).isActive = true
         }
     }
+    
+    class IndentedCellLabel: UILabel {
+        override func drawText(in rect: CGRect) {
+            let insets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+            let customRect = UIEdgeInsetsInsetRect(rect, insets)
+            super.drawText(in: customRect)
+        }
+    }
 }
 
 extension UIViewController {

@@ -9,14 +9,12 @@
 import UIKit
 
 class CalendarController: UITableViewController {
-    
-    var starterIndex: Int = 0
-    var starterSet: Bool = false
-    
-    var aprilEvents = [CalendarEvent]()
-    var MayEvents = [CalendarEvent]()
-    
-    var allEvents = [[CalendarEvent]]()
+
+    let statusBarBackground: UIView = {
+        let view = UIView()
+        view.backgroundColor = .ucmBlue
+        return view
+    }()
     
     lazy var returnButton: UIButton = {
         let button = UIButton()
@@ -38,65 +36,19 @@ class CalendarController: UITableViewController {
         return label
     }()
     
-    private let cellId = "cellId"
-    let calendarUrl = "https://www.googleapis.com/calendar/v3/calendars/cvillan0123@gmail.com/events?key=AIzaSyAIhwddROqkHVggMRyX_XLG4H5TqlC65Zs"
+    let cellId = "cellId"
+    let calendarUrl = "https://www.googleapis.com/calendar/v3/calendars/ucsfcworker@gmail.com/events?key=AIzaSyAIhwddROqkHVggMRyX_XLG4H5TqlC65Zs"
     let dateFormatter = DateFormatter()
+    
     var calendarEvents = [CalendarEvent]()
+    var starterIndex: Int = 0
+    var starterSet: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         fetchCalendarEvents()
-        
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.frame.height * 0.1
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CalendarCell
-        cell.calendarEvent = calendarEvents[indexPath.item]
-        return cell
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-       // return allEvents.count
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return allEvents[section].count
-        return calendarEvents.count
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let label = IndentedLabel()
-        switch section {
-        case 0:
-            label.text = "January"
-        case 1:
-            label.text = "February"
-        case 2:
-            label.text = "March"
-        case 3:
-            label.text = "April"
-        case 4:
-            label.text = "May"
-        default:
-            label.text = ""
-        }
-        label.backgroundColor = .ucmGold
-        label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        return label
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
     }
     
     func setupUI() {
@@ -104,9 +56,13 @@ class CalendarController: UITableViewController {
         tableView.backgroundColor = .ucmBlue
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorColor = .white
-        
+        tableView.separatorColor = .ucmGold
+
         let customNavigationBar = setupNavBar(imageForLogo: #imageLiteral(resourceName: "Calendar Tab-1"), viewForAnchor: self.tableView)
+        
+        // Acts as a background for status bar and so text doesnt peek through
+        view.addSubview(statusBarBackground)
+        statusBarBackground.anchor(top: view.topAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: view.rightAnchor, paddingRight: 0, width: 0, height: 20)
     
         view.addSubview(returnButton)
         returnButton.anchor(top: customNavigationBar.bottomAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: nil, paddingRight: 0, width: 75, height: 75)

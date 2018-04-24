@@ -10,12 +10,9 @@ import UIKit
 
 extension CalendarController {
     
-  
-    
     func fetchCalendarEvents() {
         guard let url = URL(string: calendarUrl) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-      
             
             if let error = error {
                 print(error)
@@ -29,7 +26,9 @@ extension CalendarController {
                             var calendarEvent = CalendarEvent()
                             
                             let name = itemDict.value(forKey: "summary") as? String
+                            let description = itemDict.value(forKey: "description") as? String
                             calendarEvent.name = name
+                            calendarEvent.description = description
                             
                             if let startDict = itemDict.value(forKey: "start") as? NSDictionary{
                                 let dateArray = self.formatDateObj(startDict: startDict)
@@ -52,19 +51,20 @@ extension CalendarController {
                                 if (index < 0){
                                     index += 12
                                 }
-                                print(index)
+                                //print(index)
                                // self.allEvents[index].append(calendarEvent)
                                 self.calendarEvents.append(calendarEvent)
                                 
                                 self.sortCalendarEvents()
                                 
                                 
-                                DispatchQueue.main.async {
-                                    self.tableView.reloadData()
-                                }
+                                
                             }
                         }
                     }
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
             }
             }.resume()

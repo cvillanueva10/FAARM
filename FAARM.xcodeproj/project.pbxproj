@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5640ED022087384800BE1FB1 /* CalendarController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640ED012087384800BE1FB1 /* CalendarController+TableView.swift */; };
+		5640ED0520873CB900BE1FB1 /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640ED0420873CB900BE1FB1 /* DetailsController.swift */; };
 		564F556820853A430060E974 /* AdmissionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564F556420853A420060E974 /* AdmissionsController.swift */; };
 		564F556920853A430060E974 /* AdmissionsControllerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564F556620853A420060E974 /* AdmissionsControllerSetup.swift */; };
 		564F556A20853A430060E974 /* AdmissionsControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564F556720853A420060E974 /* AdmissionsControllerHelper.swift */; };
@@ -34,6 +36,9 @@
 		569C30E4206DB59B00C1A19D /* ContactControllerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30E3206DB59B00C1A19D /* ContactControllerHelpers.swift */; };
 		569C30E6206DB7FF00C1A19D /* ContactController+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30E5206DB7FF00C1A19D /* ContactController+SetupUI.swift */; };
 		569C30E8206E017800C1A19D /* HomeController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30E7206E017800C1A19D /* HomeController+Handlers.swift */; };
+		56AE581E208EFB93002F3C51 /* DetailsController+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE581D208EFB92002F3C51 /* DetailsController+SetupUI.swift */; };
+		56AE5821208F1CF4002F3C51 /* FAARMDataModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56AE581F208F1CF4002F3C51 /* FAARMDataModels.xcdatamodeld */; };
+		56AE5827208F1FF1002F3C51 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE5826208F1FF1002F3C51 /* NotificationsController.swift */; };
 		56B5D4EC2059DADB00381FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D4EB2059DADB00381FF6 /* AppDelegate.swift */; };
 		56B5D4EE2059DADB00381FF6 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D4ED2059DADB00381FF6 /* HomeController.swift */; };
 		56B5D4F12059DADB00381FF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D4EF2059DADB00381FF6 /* Main.storyboard */; };
@@ -45,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		36A6B0F7ADB10BC1F6E988DB /* Pods_FAARM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FAARM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5640ED012087384800BE1FB1 /* CalendarController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarController+TableView.swift"; sourceTree = "<group>"; };
+		5640ED0420873CB900BE1FB1 /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
 		564F556420853A420060E974 /* AdmissionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmissionsController.swift; sourceTree = "<group>"; };
 		564F556620853A420060E974 /* AdmissionsControllerSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmissionsControllerSetup.swift; sourceTree = "<group>"; };
 		564F556720853A420060E974 /* AdmissionsControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmissionsControllerHelper.swift; sourceTree = "<group>"; };
@@ -72,6 +79,10 @@
 		569C30E3206DB59B00C1A19D /* ContactControllerHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactControllerHelpers.swift; sourceTree = "<group>"; };
 		569C30E5206DB7FF00C1A19D /* ContactController+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactController+SetupUI.swift"; sourceTree = "<group>"; };
 		569C30E7206E017800C1A19D /* HomeController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeController+Handlers.swift"; sourceTree = "<group>"; };
+		56AE581D208EFB92002F3C51 /* DetailsController+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsController+SetupUI.swift"; sourceTree = "<group>"; };
+		56AE5820208F1CF4002F3C51 /* FAARMDataModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FAARMDataModels.xcdatamodel; sourceTree = "<group>"; };
+		56AE5824208F1F9C002F3C51 /* AdmissionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmissionsController.swift; sourceTree = SOURCE_ROOT; };
+		56AE5826208F1FF1002F3C51 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		56B5D4E82059DADB00381FF6 /* FAARM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FAARM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B5D4EB2059DADB00381FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56B5D4ED2059DADB00381FF6 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -106,6 +117,15 @@
 			path = HomeControllerCollectionView;
 			sourceTree = "<group>";
 		};
+		5640ED0320873C9400BE1FB1 /* DetailsController */ = {
+			isa = PBXGroup;
+			children = (
+				5640ED0420873CB900BE1FB1 /* DetailsController.swift */,
+				56AE581D208EFB92002F3C51 /* DetailsController+SetupUI.swift */,
+			);
+			path = DetailsController;
+			sourceTree = "<group>";
+		};
 		564F556320853A420060E974 /* AdmissionsController */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +148,7 @@
 		564F556B20853A490060E974 /* FinAidController */ = {
 			isa = PBXGroup;
 			children = (
+				56AE5824208F1F9C002F3C51 /* AdmissionsController.swift */,
 				564F556C20853A490060E974 /* FinAidControllerExtensions */,
 				564F556F20853A490060E974 /* FinAidController.swift */,
 			);
@@ -167,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				564F557C20853BC00060E974 /* CalendarController+getJSON.swift */,
+				5640ED012087384800BE1FB1 /* CalendarController+TableView.swift */,
 			);
 			path = CalendarControllerExtensions;
 			sourceTree = "<group>";
@@ -184,9 +206,10 @@
 		5655CB8820798C66000599E5 /* CalendarController */ = {
 			isa = PBXGroup;
 			children = (
+				5640ED0320873C9400BE1FB1 /* DetailsController */,
 				564F557B20853BA20060E974 /* CalendarControllerExtensions */,
-				56855357207DABB500170885 /* CalendarEvent.swift */,
 				5655CB8920798C81000599E5 /* CalendarController.swift */,
+				56855357207DABB500170885 /* CalendarEvent.swift */,
 				56E4C8102080865A00ECEE9A /* CalendarCell.swift */,
 			);
 			path = CalendarController;
@@ -231,6 +254,21 @@
 			path = ContactControllerExtensions;
 			sourceTree = "<group>";
 		};
+		56AE5822208F1F8D002F3C51 /* NotificationsController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NotificationsController;
+			sourceTree = "<group>";
+		};
+		56AE5825208F1FB7002F3C51 /* NotificationsController */ = {
+			isa = PBXGroup;
+			children = (
+				56AE5826208F1FF1002F3C51 /* NotificationsController.swift */,
+			);
+			path = NotificationsController;
+			sourceTree = "<group>";
+		};
 		56B5D4DF2059DADB00381FF6 = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +290,7 @@
 		56B5D4EA2059DADB00381FF6 /* FAARM */ = {
 			isa = PBXGroup;
 			children = (
+				56AE5822208F1F8D002F3C51 /* NotificationsController */,
 				56B5D4EB2059DADB00381FF6 /* AppDelegate.swift */,
 				569C30D72061639F00C1A19D /* CustomNavigationView.swift */,
 				564F557320853A4F0060E974 /* RegistrarController */,
@@ -259,11 +298,13 @@
 				564F556320853A420060E974 /* AdmissionsController */,
 				5655CB8820798C66000599E5 /* CalendarController */,
 				569C30DF206DB4DF00C1A19D /* ContactController */,
+				56AE5825208F1FB7002F3C51 /* NotificationsController */,
 				569C30DC206B32F800C1A19D /* HomeController */,
 				56B5D4EF2059DADB00381FF6 /* Main.storyboard */,
 				56B5D4F22059DADB00381FF6 /* Assets.xcassets */,
 				56B5D4F42059DADB00381FF6 /* LaunchScreen.storyboard */,
 				56B5D4F72059DADB00381FF6 /* Info.plist */,
+				56AE581F208F1CF4002F3C51 /* FAARMDataModels.xcdatamodeld */,
 				569C30CF2059F79B00C1A19D /* Extensions.swift */,
 				5655CB8620798865000599E5 /* OutlookService.swift */,
 			);
@@ -317,7 +358,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Christopher Villanueva";
 				TargetAttributes = {
 					56B5D4E72059DADB00381FF6 = {
@@ -397,12 +438,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5640ED0520873CB900BE1FB1 /* DetailsController.swift in Sources */,
 				564F556820853A430060E974 /* AdmissionsController.swift in Sources */,
 				564F558120859AF10060E974 /* MessageView.swift in Sources */,
 				5655CB8A20798C81000599E5 /* CalendarController.swift in Sources */,
+				5640ED022087384800BE1FB1 /* CalendarController+TableView.swift in Sources */,
 				564F557D20853BC00060E974 /* CalendarController+getJSON.swift in Sources */,
 				564F557820853A4F0060E974 /* RegistrarController.swift in Sources */,
 				564F557020853A490060E974 /* FinAidControllerHelper.swift in Sources */,
+				56AE5821208F1CF4002F3C51 /* FAARMDataModels.xcdatamodeld in Sources */,
 				569C30DE206C49BE00C1A19D /* HomeSliderView.swift in Sources */,
 				564F558320859FD20060E974 /* UserInputView.swift in Sources */,
 				564F556920853A430060E974 /* AdmissionsControllerSetup.swift in Sources */,
@@ -414,6 +458,7 @@
 				564F557920853A4F0060E974 /* RegistrarControllerSetup.swift in Sources */,
 				564F556A20853A430060E974 /* AdmissionsControllerHelper.swift in Sources */,
 				564F557220853A490060E974 /* FinAidController.swift in Sources */,
+				56AE5827208F1FF1002F3C51 /* NotificationsController.swift in Sources */,
 				569C30DB2061724500C1A19D /* HomeController+BuildCollectionView.swift in Sources */,
 				569C30D82061639F00C1A19D /* CustomNavigationView.swift in Sources */,
 				564F557120853A490060E974 /* FinAidControllerSetup.swift in Sources */,
@@ -425,6 +470,7 @@
 				569C30D02059F79B00C1A19D /* Extensions.swift in Sources */,
 				564F557A20853A4F0060E974 /* RegistrarControllerHelper.swift in Sources */,
 				569C30E8206E017800C1A19D /* HomeController+Handlers.swift in Sources */,
+				56AE581E208EFB93002F3C51 /* DetailsController+SetupUI.swift in Sources */,
 				56B5D4EC2059DADB00381FF6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +511,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -472,6 +519,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -522,6 +570,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -529,6 +578,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -622,6 +672,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		56AE581F208F1CF4002F3C51 /* FAARMDataModels.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				56AE5820208F1CF4002F3C51 /* FAARMDataModels.xcdatamodel */,
+			);
+			currentVersion = 56AE5820208F1CF4002F3C51 /* FAARMDataModels.xcdatamodel */;
+			path = FAARMDataModels.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 56B5D4E02059DADB00381FF6 /* Project object */;
 }

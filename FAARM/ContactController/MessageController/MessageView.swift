@@ -109,6 +109,7 @@ class MessageView: UICollectionViewCell, UIPickerViewDelegate, UIPickerViewDataS
     lazy var messageTextView: UITextView = {
         let textView = UITextView()
         textView.backgroundColor = .white
+        textView.isEditable = true
         textView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTextInputChange)))
         return textView
     }()
@@ -120,7 +121,7 @@ class MessageView: UICollectionViewCell, UIPickerViewDelegate, UIPickerViewDataS
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.addTarget(self, action: #selector(messageController?.handleSubmit), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleSubmit), for: .touchUpInside)
         button.isEnabled = false
         return button
     }()
@@ -209,8 +210,10 @@ class MessageView: UICollectionViewCell, UIPickerViewDelegate, UIPickerViewDataS
     }
     
     @objc func handleDismiss(){
-        
         messageController?.handleDismiss()
+    }
+    @objc func handleSubmit(){
+        messageController?.handleSubmit()
     }
 
     
