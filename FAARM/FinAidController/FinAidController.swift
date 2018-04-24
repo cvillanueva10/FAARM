@@ -25,9 +25,9 @@ class FinAidController: UICollectionViewController {
         collectionView.backgroundColor = .ucmBlue
         
         let customNavigationBar = CustomNavigationView()
-        customNavigationBar.faarmLogoImageView.image = #imageLiteral(resourceName: "FinAidTitle")
+        customNavigationBar.logoImageView.image = #imageLiteral(resourceName: "FinAidTitle")
         collectionView.addSubview(customNavigationBar)
-        customNavigationBar.anchorNavBar(view: view)
+        customNavigationBar.anchorMiniNavBar(view: view)
         
         setupUI()
         
