@@ -23,7 +23,6 @@
 		564F558120859AF10060E974 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564F558020859AF10060E974 /* MessageView.swift */; };
 		564F558320859FD20060E974 /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564F558220859FD20060E974 /* UserInputView.swift */; };
 		5655CB8220798540000599E5 /* MSAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5655CB8120798540000599E5 /* MSAL.framework */; };
-		5655CB8720798865000599E5 /* OutlookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655CB8620798865000599E5 /* OutlookService.swift */; };
 		5655CB8A20798C81000599E5 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655CB8920798C81000599E5 /* CalendarController.swift */; };
 		56855358207DABB600170885 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56855357207DABB500170885 /* CalendarEvent.swift */; };
 		569C30D02059F79B00C1A19D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30CF2059F79B00C1A19D /* Extensions.swift */; };
@@ -66,7 +65,6 @@
 		564F558020859AF10060E974 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		564F558220859FD20060E974 /* UserInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
 		5655CB8120798540000599E5 /* MSAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MSAL.framework; path = Carthage/Build/iOS/MSAL.framework; sourceTree = "<group>"; };
-		5655CB8620798865000599E5 /* OutlookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookService.swift; sourceTree = "<group>"; };
 		5655CB8920798C81000599E5 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		56855357207DABB500170885 /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		569C30CF2059F79B00C1A19D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 				56B5D4F72059DADB00381FF6 /* Info.plist */,
 				56AE581F208F1CF4002F3C51 /* FAARMDataModels.xcdatamodeld */,
 				569C30CF2059F79B00C1A19D /* Extensions.swift */,
-				5655CB8620798865000599E5 /* OutlookService.swift */,
 			);
 			path = FAARM;
 			sourceTree = "<group>";
@@ -465,7 +462,6 @@
 				569C30E4206DB59B00C1A19D /* ContactControllerHelpers.swift in Sources */,
 				569C30E1206DB50600C1A19D /* ContactController.swift in Sources */,
 				56E4C8112080865A00ECEE9A /* CalendarCell.swift in Sources */,
-				5655CB8720798865000599E5 /* OutlookService.swift in Sources */,
 				564F557F208598ED0060E974 /* MessageController.swift in Sources */,
 				569C30D02059F79B00C1A19D /* Extensions.swift in Sources */,
 				564F557A20853A4F0060E974 /* RegistrarControllerHelper.swift in Sources */,
