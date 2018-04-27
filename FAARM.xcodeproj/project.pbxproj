@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5640ED022087384800BE1FB1 /* CalendarController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640ED012087384800BE1FB1 /* CalendarController+TableView.swift */; };
-		5640ED0520873CB900BE1FB1 /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640ED0420873CB900BE1FB1 /* DetailsController.swift */; };
+		5640ED0520873CB900BE1FB1 /* CalendarAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640ED0420873CB900BE1FB1 /* CalendarAddController.swift */; };
 		564F557D20853BC00060E974 /* CalendarController+getJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564F557C20853BC00060E974 /* CalendarController+getJSON.swift */; };
 		564F557F208598ED0060E974 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564F557E208598ED0060E974 /* MessageController.swift */; };
 		564F558120859AF10060E974 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564F558020859AF10060E974 /* MessageView.swift */; };
@@ -26,12 +26,20 @@
 		569C30E4206DB59B00C1A19D /* ContactControllerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30E3206DB59B00C1A19D /* ContactControllerHelpers.swift */; };
 		569C30E6206DB7FF00C1A19D /* ContactController+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30E5206DB7FF00C1A19D /* ContactController+SetupUI.swift */; };
 		569C30E8206E017800C1A19D /* HomeController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30E7206E017800C1A19D /* HomeController+Handlers.swift */; };
-		56AE581E208EFB93002F3C51 /* DetailsController+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE581D208EFB92002F3C51 /* DetailsController+SetupUI.swift */; };
+		56AE581E208EFB93002F3C51 /* CalendarAddController+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE581D208EFB92002F3C51 /* CalendarAddController+SetupUI.swift */; };
 		56AE5821208F1CF4002F3C51 /* FAARMDataModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56AE581F208F1CF4002F3C51 /* FAARMDataModels.xcdatamodeld */; };
 		56AE5827208F1FF1002F3C51 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE5826208F1FF1002F3C51 /* NotificationsController.swift */; };
 		56AE5838208FB9B0002F3C51 /* AdmissionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE5834208FB9B0002F3C51 /* AdmissionsController.swift */; };
 		56AE5839208FB9B0002F3C51 /* AdmissionsControllerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE5836208FB9B0002F3C51 /* AdmissionsControllerSetup.swift */; };
 		56AE583A208FB9B0002F3C51 /* AdmissionsControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE5837208FB9B0002F3C51 /* AdmissionsControllerHelper.swift */; };
+		56AE584020901612002F3C51 /* FinAidControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE583D20901611002F3C51 /* FinAidControllerHelper.swift */; };
+		56AE584120901612002F3C51 /* FinAidControllerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE583E20901611002F3C51 /* FinAidControllerSetup.swift */; };
+		56AE584220901612002F3C51 /* FinAidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE583F20901611002F3C51 /* FinAidController.swift */; };
+		56AE58482090164E002F3C51 /* RegistrarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE58442090164E002F3C51 /* RegistrarController.swift */; };
+		56AE58492090164E002F3C51 /* RegistrarControllerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE58462090164E002F3C51 /* RegistrarControllerSetup.swift */; };
+		56AE584A2090164E002F3C51 /* RegistrarControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE58472090164E002F3C51 /* RegistrarControllerHelper.swift */; };
+		56AE584C20907D31002F3C51 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE584B20907D31002F3C51 /* CoreDataManager.swift */; };
+		56AE584E209162BF002F3C51 /* NotificationsDeleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE584D209162BF002F3C51 /* NotificationsDeleteController.swift */; };
 		56B5D4EC2059DADB00381FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D4EB2059DADB00381FF6 /* AppDelegate.swift */; };
 		56B5D4EE2059DADB00381FF6 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D4ED2059DADB00381FF6 /* HomeController.swift */; };
 		56B5D4F12059DADB00381FF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D4EF2059DADB00381FF6 /* Main.storyboard */; };
@@ -44,7 +52,7 @@
 /* Begin PBXFileReference section */
 		36A6B0F7ADB10BC1F6E988DB /* Pods_FAARM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FAARM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5640ED012087384800BE1FB1 /* CalendarController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarController+TableView.swift"; sourceTree = "<group>"; };
-		5640ED0420873CB900BE1FB1 /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
+		5640ED0420873CB900BE1FB1 /* CalendarAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddController.swift; sourceTree = "<group>"; };
 		564F557C20853BC00060E974 /* CalendarController+getJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarController+getJSON.swift"; sourceTree = "<group>"; };
 		564F557E208598ED0060E974 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		564F558020859AF10060E974 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
@@ -62,18 +70,20 @@
 		569C30E3206DB59B00C1A19D /* ContactControllerHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactControllerHelpers.swift; sourceTree = "<group>"; };
 		569C30E5206DB7FF00C1A19D /* ContactController+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactController+SetupUI.swift"; sourceTree = "<group>"; };
 		569C30E7206E017800C1A19D /* HomeController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeController+Handlers.swift"; sourceTree = "<group>"; };
-		56AE581D208EFB92002F3C51 /* DetailsController+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsController+SetupUI.swift"; sourceTree = "<group>"; };
+		56AE581D208EFB92002F3C51 /* CalendarAddController+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarAddController+SetupUI.swift"; sourceTree = "<group>"; };
 		56AE5820208F1CF4002F3C51 /* FAARMDataModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FAARMDataModels.xcdatamodel; sourceTree = "<group>"; };
 		56AE5826208F1FF1002F3C51 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
-		56AE5828208FB928002F3C51 /* RegistrarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarController.swift; sourceTree = "<group>"; };
-		56AE5829208FB928002F3C51 /* RegistrarControllerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarControllerSetup.swift; sourceTree = "<group>"; };
-		56AE582A208FB928002F3C51 /* RegistrarControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarControllerHelper.swift; sourceTree = "<group>"; };
-		56AE582D208FB9A3002F3C51 /* FinAidControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinAidControllerHelper.swift; sourceTree = "<group>"; };
-		56AE582E208FB9A3002F3C51 /* FinAidControllerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinAidControllerSetup.swift; sourceTree = "<group>"; };
-		56AE5830208FB9A3002F3C51 /* FinAidController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinAidController.swift; sourceTree = "<group>"; };
 		56AE5834208FB9B0002F3C51 /* AdmissionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmissionsController.swift; sourceTree = "<group>"; };
 		56AE5836208FB9B0002F3C51 /* AdmissionsControllerSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmissionsControllerSetup.swift; sourceTree = "<group>"; };
 		56AE5837208FB9B0002F3C51 /* AdmissionsControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmissionsControllerHelper.swift; sourceTree = "<group>"; };
+		56AE583D20901611002F3C51 /* FinAidControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinAidControllerHelper.swift; sourceTree = "<group>"; };
+		56AE583E20901611002F3C51 /* FinAidControllerSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinAidControllerSetup.swift; sourceTree = "<group>"; };
+		56AE583F20901611002F3C51 /* FinAidController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinAidController.swift; sourceTree = "<group>"; };
+		56AE58442090164E002F3C51 /* RegistrarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrarController.swift; sourceTree = "<group>"; };
+		56AE58462090164E002F3C51 /* RegistrarControllerSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrarControllerSetup.swift; sourceTree = "<group>"; };
+		56AE58472090164E002F3C51 /* RegistrarControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrarControllerHelper.swift; sourceTree = "<group>"; };
+		56AE584B20907D31002F3C51 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		56AE584D209162BF002F3C51 /* NotificationsDeleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsDeleteController.swift; sourceTree = "<group>"; };
 		56B5D4E82059DADB00381FF6 /* FAARM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FAARM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B5D4EB2059DADB00381FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56B5D4ED2059DADB00381FF6 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -108,13 +118,13 @@
 			path = HomeControllerCollectionView;
 			sourceTree = "<group>";
 		};
-		5640ED0320873C9400BE1FB1 /* DetailsController */ = {
+		5640ED0320873C9400BE1FB1 /* CalendarAddController */ = {
 			isa = PBXGroup;
 			children = (
-				5640ED0420873CB900BE1FB1 /* DetailsController.swift */,
-				56AE581D208EFB92002F3C51 /* DetailsController+SetupUI.swift */,
+				5640ED0420873CB900BE1FB1 /* CalendarAddController.swift */,
+				56AE581D208EFB92002F3C51 /* CalendarAddController+SetupUI.swift */,
 			);
-			path = DetailsController;
+			path = CalendarAddController;
 			sourceTree = "<group>";
 		};
 		564F557B20853BA20060E974 /* CalendarControllerExtensions */ = {
@@ -139,7 +149,7 @@
 		5655CB8820798C66000599E5 /* CalendarController */ = {
 			isa = PBXGroup;
 			children = (
-				5640ED0320873C9400BE1FB1 /* DetailsController */,
+				5640ED0320873C9400BE1FB1 /* CalendarAddController */,
 				564F557B20853BA20060E974 /* CalendarControllerExtensions */,
 				5655CB8920798C81000599E5 /* CalendarController.swift */,
 				56855357207DABB500170885 /* CalendarEvent.swift */,
@@ -191,47 +201,10 @@
 			isa = PBXGroup;
 			children = (
 				56AE5826208F1FF1002F3C51 /* NotificationsController.swift */,
+				56AE584D209162BF002F3C51 /* NotificationsDeleteController.swift */,
 			);
 			path = NotificationsController;
 			sourceTree = "<group>";
-		};
-		56AE582B208FB928002F3C51 /* RegistrarControllerExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				56AE5829208FB928002F3C51 /* RegistrarControllerSetup.swift */,
-				56AE582A208FB928002F3C51 /* RegistrarControllerHelper.swift */,
-			);
-			path = RegistrarControllerExtensions;
-			sourceTree = "<group>";
-		};
-		56AE582C208FB928002F3C51 /* RegistrarController */ = {
-			isa = PBXGroup;
-			children = (
-				56AE5828208FB928002F3C51 /* RegistrarController.swift */,
-				56AE582B208FB928002F3C51 /* RegistrarControllerExtensions */,
-			);
-			name = RegistrarController;
-			path = ../RegistrarController;
-			sourceTree = "<group>";
-		};
-		56AE582F208FB9A3002F3C51 /* FinAidControllerExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				56AE582D208FB9A3002F3C51 /* FinAidControllerHelper.swift */,
-				56AE582E208FB9A3002F3C51 /* FinAidControllerSetup.swift */,
-			);
-			path = FinAidControllerExtensions;
-			sourceTree = "<group>";
-		};
-		56AE5831208FB9A3002F3C51 /* FinAidController */ = {
-			isa = PBXGroup;
-			children = (
-				56AE582F208FB9A3002F3C51 /* FinAidControllerExtensions */,
-				56AE5830208FB9A3002F3C51 /* FinAidController.swift */,
-			);
-			name = FinAidController;
-			path = /Users/christophervillanueva/Desktop/FAARM/FAARM/FinAidController;
-			sourceTree = "<absolute>";
 		};
 		56AE5832208FB9B0002F3C51 /* AdmissionsController */ = {
 			isa = PBXGroup;
@@ -250,6 +223,42 @@
 				56AE5837208FB9B0002F3C51 /* AdmissionsControllerHelper.swift */,
 			);
 			path = AdmissionsControllerExtensions;
+			sourceTree = "<group>";
+		};
+		56AE583B20901611002F3C51 /* FinAidController */ = {
+			isa = PBXGroup;
+			children = (
+				56AE583C20901611002F3C51 /* FinAidControllerExtensions */,
+				56AE583F20901611002F3C51 /* FinAidController.swift */,
+			);
+			path = FinAidController;
+			sourceTree = "<group>";
+		};
+		56AE583C20901611002F3C51 /* FinAidControllerExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				56AE583D20901611002F3C51 /* FinAidControllerHelper.swift */,
+				56AE583E20901611002F3C51 /* FinAidControllerSetup.swift */,
+			);
+			path = FinAidControllerExtensions;
+			sourceTree = "<group>";
+		};
+		56AE58432090164E002F3C51 /* RegistrarController */ = {
+			isa = PBXGroup;
+			children = (
+				56AE58442090164E002F3C51 /* RegistrarController.swift */,
+				56AE58452090164E002F3C51 /* RegistrarControllerExtensions */,
+			);
+			path = RegistrarController;
+			sourceTree = SOURCE_ROOT;
+		};
+		56AE58452090164E002F3C51 /* RegistrarControllerExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				56AE58462090164E002F3C51 /* RegistrarControllerSetup.swift */,
+				56AE58472090164E002F3C51 /* RegistrarControllerHelper.swift */,
+			);
+			path = RegistrarControllerExtensions;
 			sourceTree = "<group>";
 		};
 		56B5D4DF2059DADB00381FF6 = {
@@ -275,9 +284,11 @@
 			children = (
 				56B5D4EB2059DADB00381FF6 /* AppDelegate.swift */,
 				569C30D72061639F00C1A19D /* CustomNavigationView.swift */,
-				56AE5831208FB9A3002F3C51 /* FinAidController */,
+				56AE584B20907D31002F3C51 /* CoreDataManager.swift */,
+				569C30CF2059F79B00C1A19D /* Extensions.swift */,
+				56AE58432090164E002F3C51 /* RegistrarController */,
+				56AE583B20901611002F3C51 /* FinAidController */,
 				56AE5832208FB9B0002F3C51 /* AdmissionsController */,
-				56AE582C208FB928002F3C51 /* RegistrarController */,
 				5655CB8820798C66000599E5 /* CalendarController */,
 				569C30DF206DB4DF00C1A19D /* ContactController */,
 				56AE5825208F1FB7002F3C51 /* NotificationsController */,
@@ -287,7 +298,6 @@
 				56B5D4F42059DADB00381FF6 /* LaunchScreen.storyboard */,
 				56B5D4F72059DADB00381FF6 /* Info.plist */,
 				56AE581F208F1CF4002F3C51 /* FAARMDataModels.xcdatamodeld */,
-				569C30CF2059F79B00C1A19D /* Extensions.swift */,
 			);
 			path = FAARM;
 			sourceTree = "<group>";
@@ -419,16 +429,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5640ED0520873CB900BE1FB1 /* DetailsController.swift in Sources */,
+				5640ED0520873CB900BE1FB1 /* CalendarAddController.swift in Sources */,
+				56AE58492090164E002F3C51 /* RegistrarControllerSetup.swift in Sources */,
 				564F558120859AF10060E974 /* MessageView.swift in Sources */,
 				5655CB8A20798C81000599E5 /* CalendarController.swift in Sources */,
+				56AE584C20907D31002F3C51 /* CoreDataManager.swift in Sources */,
 				5640ED022087384800BE1FB1 /* CalendarController+TableView.swift in Sources */,
+				56AE584E209162BF002F3C51 /* NotificationsDeleteController.swift in Sources */,
 				564F557D20853BC00060E974 /* CalendarController+getJSON.swift in Sources */,
 				56AE5838208FB9B0002F3C51 /* AdmissionsController.swift in Sources */,
 				56AE5821208F1CF4002F3C51 /* FAARMDataModels.xcdatamodeld in Sources */,
 				569C30DE206C49BE00C1A19D /* HomeSliderView.swift in Sources */,
 				564F558320859FD20060E974 /* UserInputView.swift in Sources */,
+				56AE58482090164E002F3C51 /* RegistrarController.swift in Sources */,
+				56AE584120901612002F3C51 /* FinAidControllerSetup.swift in Sources */,
 				569C30D4205B9B1F00C1A19D /* HomeBodyCell.swift in Sources */,
+				56AE584020901612002F3C51 /* FinAidControllerHelper.swift in Sources */,
 				56B5D4EE2059DADB00381FF6 /* HomeController.swift in Sources */,
 				56855358207DABB600170885 /* CalendarEvent.swift in Sources */,
 				569C30D2205B978C00C1A19D /* HomeHeaderCell.swift in Sources */,
@@ -439,12 +455,14 @@
 				56AE583A208FB9B0002F3C51 /* AdmissionsControllerHelper.swift in Sources */,
 				569C30D82061639F00C1A19D /* CustomNavigationView.swift in Sources */,
 				569C30E4206DB59B00C1A19D /* ContactControllerHelpers.swift in Sources */,
+				56AE584220901612002F3C51 /* FinAidController.swift in Sources */,
 				569C30E1206DB50600C1A19D /* ContactController.swift in Sources */,
 				56E4C8112080865A00ECEE9A /* CalendarCell.swift in Sources */,
+				56AE584A2090164E002F3C51 /* RegistrarControllerHelper.swift in Sources */,
 				564F557F208598ED0060E974 /* MessageController.swift in Sources */,
 				569C30D02059F79B00C1A19D /* Extensions.swift in Sources */,
 				569C30E8206E017800C1A19D /* HomeController+Handlers.swift in Sources */,
-				56AE581E208EFB93002F3C51 /* DetailsController+SetupUI.swift in Sources */,
+				56AE581E208EFB93002F3C51 /* CalendarAddController+SetupUI.swift in Sources */,
 				56B5D4EC2059DADB00381FF6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -56,6 +56,7 @@ class CalendarController: UITableViewController {
         tableView.backgroundColor = .ucmBlue
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorColor = .clear
 
         let customNavigationBar = setupNavBar(imageForLogo: #imageLiteral(resourceName: "Calendar Tab-1"), viewForAnchor: self.tableView)
         

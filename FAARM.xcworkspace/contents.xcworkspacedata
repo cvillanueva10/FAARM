@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "group:/Users/christophervillanueva/Desktop/FAARM/FAARM/FinAidController"
-      name = "FinAidController">
-      <Group
-         location = "group:FinAidControllerExtensions"
-         name = "FinAidControllerExtensions">
-         <FileRef
-            location = "group:FinAidControllerHelper.swift">
-         </FileRef>
-         <FileRef
-            location = "group:FinAidControllerSetup.swift">
-         </FileRef>
-      </Group>
-      <FileRef
-         location = "group:FinAidController.swift">
-      </FileRef>
-   </Group>
    <FileRef
       location = "group:FAARM.xcodeproj">
    </FileRef>

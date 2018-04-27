@@ -63,6 +63,16 @@ class CalendarCell: UITableViewCell {
         }
     }
     
+    var savedEvent: SavedEvent? {
+        didSet {
+            titleLabel.text = savedEvent?.title
+            //dayNameLabel.text = savedEvent?.dayName
+            if let monthAbbrev = savedEvent?.monthAbbrev, let dayNumber = savedEvent?.dayNumber {
+                dateLabel.text = "\(monthAbbrev) \(dayNumber)"
+            }
+        }
+    }
+    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

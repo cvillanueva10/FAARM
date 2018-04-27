@@ -11,12 +11,12 @@ import UIKit
 extension CalendarController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailsController = DetailsController()
-        detailsController.modalPresentationStyle = .overFullScreen
-        detailsController.modalTransitionStyle = .crossDissolve
-        detailsController.calendarController = self
-        detailsController.calendarEvent = calendarEvents[indexPath.item]
-        present(detailsController, animated: true, completion: nil)
+        let calendarAddController = CalendarAddController()
+        calendarAddController.modalPresentationStyle = .overFullScreen
+        calendarAddController.modalTransitionStyle = .crossDissolve
+        calendarAddController.calendarController = self
+        calendarAddController.calendarEvent = calendarEvents[indexPath.item]
+        present(calendarAddController, animated: true, completion: nil)
     }
     
     
@@ -60,7 +60,7 @@ extension CalendarController {
         label.text = "Loading events..."
         label.textColor = .white
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 22)
         return label
     }
     

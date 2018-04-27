@@ -31,7 +31,7 @@ extension CalendarController {
                             calendarEvent.description = description
                             
                             if let startDict = itemDict.value(forKey: "start") as? NSDictionary{
-                                let dateArray = self.formatDateObj(startDict: startDict)
+                                let dateArray = self.formatDateObj(startDict: startDict, dateFormatter: self.dateFormatter)
                                 
                                 calendarEvent.monthAbbrev = dateArray[0]
                                 calendarEvent.monthNum = dateArray[1]
@@ -94,32 +94,7 @@ extension CalendarController {
     }
     
     
-    func formatDateObj(startDict: NSDictionary) -> [String] {
-        
-        var dateObject = Date()
-        if let unformattedDate = startDict.value(forKey: "dateTime") as? String {
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-            dateObject = dateFormatter.date(from: unformattedDate) ?? Date()
-        } else if let unformattedDate = startDict.value(forKey: "date") as? String {
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            dateObject = dateFormatter.date(from: unformattedDate) ?? Date()
-        } else {
-            dateFormatter.dateFormat = ""
-            dateObject = dateFormatter.date(from: "") ?? Date()
-        }
-        self.dateFormatter.dateFormat = "MMM"
-        let monthAbbrev = self.dateFormatter.string(from: dateObject)
-        self.dateFormatter.dateFormat = "MM"
-        let monthNum = self.dateFormatter.string(from: dateObject)
-        self.dateFormatter.dateFormat = "dd"
-        let dayNumber = self.dateFormatter.string(from: dateObject)
-        self.dateFormatter.dateFormat = "EEE"
-        let dayName = self.dateFormatter.string(from: dateObject)
-        self.dateFormatter.dateFormat = "yyyy"
-        let year = self.dateFormatter.string(from: dateObject)
-        
-        return [monthAbbrev,monthNum, dayNumber, dayName, year]
-    }
+    
     
     
 }

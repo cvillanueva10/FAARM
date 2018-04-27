@@ -11,7 +11,6 @@ import SafariServices
 
 class RegistrarController: UICollectionViewController {
     
-    
     let UniversityImageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "UniversityBackground"))
         imageView.contentMode = .scaleAspectFill

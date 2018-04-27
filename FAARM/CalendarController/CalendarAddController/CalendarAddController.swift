@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class DetailsController: UIViewController {
+class CalendarAddController: UIViewController {
     
     let detailsView: UIView = {
         let view = UIView()
@@ -18,17 +18,6 @@ class DetailsController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.masksToBounds = true
         return view
-    }()
-    
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .ucmGold
-        label.numberOfLines = 0
-        label.textColor = .white
-        label.textAlignment = .center
-        label.text = "FAFSA Due"
-        label.font = UIFont.boldSystemFont(ofSize: 18)
-        return label
     }()
     
     lazy var cancelButton: UIButton = {
@@ -67,39 +56,35 @@ class DetailsController: UIViewController {
         label.backgroundColor = .ucmGold
         return label
     }()
-    
-    let descriptionLabel: IndentedLabel = {
-        let label = IndentedLabel()
-        label.backgroundColor = .ucmBlue
-        label.textColor = .white
-        label.textAlignment = .left
-        label.text = "Additional Information: "
-        label.font = UIFont.italicSystemFont(ofSize: 22)
-        return label
-    }()
-    
+
     let descriptionTextView: UITextView = {
         let textView = UITextView()
         textView.backgroundColor = .ucmBlue
         textView.textColor = .white
         textView.textAlignment = .left
         textView.isUserInteractionEnabled = false
-        textView.text = "This is a test text view in order to see if this looks good. Normally we will put a description about what this event or deadline entails. A lot of financial aid, admission and registration details will be put into this text view."
         textView.font = UIFont.systemFont(ofSize: 20)
         return textView
     }()
+    
+    var monthAbbrev: String?
+    var dayNumber: String?
+    var dayName: String?
     
     var calendarController: CalendarController?
     
     var calendarEvent: CalendarEvent? {
         didSet {
-            titleLabel.text = calendarEvent?.name
+           //titleLabel.text = calendarEvent?.name
             if let dayName = calendarEvent?.dayName, let monthAbbrev = calendarEvent?.monthAbbrev, let dayNumber = calendarEvent?.dayNumber{
-                let attributedText = NSMutableAttributedString(string: "Date : ", attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 18), NSAttributedStringKey.foregroundColor: UIColor.white])
-                attributedText.append(NSAttributedString(string: "\(dayName), \(monthAbbrev) \(dayNumber)", attributes: [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor: UIColor.white]))
+                let attributedText = NSMutableAttributedString(string: "Date : ", attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 22), NSAttributedStringKey.foregroundColor: UIColor.white])
+                attributedText.append(NSAttributedString(string: "\(dayName), \(monthAbbrev) \(dayNumber)", attributes: [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 22), NSAttributedStringKey.foregroundColor: UIColor.white]))
                 dateLabel.attributedText = attributedText
+                self.monthAbbrev = monthAbbrev
+                self.dayNumber = dayNumber
+                self.dayName = dayName
             }
-            descriptionTextView.text = calendarEvent?.description
+            descriptionTextView.text = calendarEvent?.name
             
         }
     }
@@ -134,16 +119,12 @@ class DetailsController: UIViewController {
     // as updates
     @objc func handleSave() {
         
-        let persistentContainer = NSPersistentContainer(name: "FAARMDataModels")
-        persistentContainer.loadPersistentStores { (storeDescription, error) in
-            if let error = error {
-                fatalError("Failed to load store: \(error)")
-            }
-        }
-        let context = persistentContainer.viewContext
+        let context = CoreDataManager.shared.persistentContainer.viewContext
         let savedEvent = NSEntityDescription.insertNewObject(forEntityName: "SavedEvent", into: context)
-        savedEvent.setValue(titleLabel.text, forKey: "title")
-        
+        savedEvent.setValue(descriptionTextView.text, forKey: "title")
+        savedEvent.setValue(monthAbbrev, forKey: "monthAbbrev")
+        savedEvent.setValue(dayNumber, forKey: "dayNumber")
+        savedEvent.setValue(dayName, forKey: "dayName")
         do {
             try context.save()
         } catch let saveError {

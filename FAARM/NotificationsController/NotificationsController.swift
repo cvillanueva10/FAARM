@@ -38,6 +38,8 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
         return label
     }()
     
+    var savedEvents = [SavedEvent]()
+    
     override func viewDidLoad() {
         view.backgroundColor = .ucmBlue
         
@@ -49,20 +51,16 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
     // notifications and displays them on the tableView
     func fetchSavedEvents() {
         
-        let persistentContainer = NSPersistentContainer(name: "FAARMDataModels")
-        persistentContainer.loadPersistentStores { (storeDescription, error) in
-            if let error = error {
-                fatalError("Failed to load store: \(error)")
-            }
-        }
-        let context = persistentContainer.viewContext
+        let context = CoreDataManager.shared.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<SavedEvent>(entityName: "SavedEvent")
         
         do {
             let savedEvents = try context.fetch(fetchRequest)
             savedEvents.forEach { (event) in
-                print(event.title ?? "")
+                print(event.monthAbbrev ?? "")
             }
+            self.savedEvents = savedEvents
+            self.tableView.reloadData()
         } catch let fetchError {
             print("Failed to fetch events: \(fetchError)")
         }
@@ -83,7 +81,8 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
         
         view.addSubview(tableView)
         tableView.anchor(top: headerLabel.bottomAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: view.bottomAnchor, paddingBotton: 0, right: view.rightAnchor, paddingRight: 0, width: 0, height: 0)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        
+        tableView.register(CalendarCell.self, forCellReuseIdentifier: cellId)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -92,8 +91,14 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
         dismiss(animated: true, completion: nil)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let notificationsDeleteController = NotificationsDeleteController()
+        present(notificationsDeleteController, animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CalendarCell
+        cell.savedEvent = savedEvents[indexPath.item]
         return cell
     }
     
@@ -102,7 +107,20 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return savedEvents.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "No events saved"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 22)
+        return label
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return savedEvents.count == 0 ? 150 : 0
     }
     
     

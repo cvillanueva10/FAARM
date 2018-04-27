@@ -77,5 +77,33 @@ extension UIViewController {
         
     }
     
+    func formatDateObj(startDict: NSDictionary, dateFormatter: DateFormatter) -> [String] {
+        
+        var dateObject = Date()
+        if let unformattedDate = startDict.value(forKey: "dateTime") as? String {
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+            dateObject = dateFormatter.date(from: unformattedDate) ?? Date()
+        } else if let unformattedDate = startDict.value(forKey: "date") as? String {
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateObject = dateFormatter.date(from: unformattedDate) ?? Date()
+        } else {
+            dateFormatter.dateFormat = ""
+            dateObject = dateFormatter.date(from: "") ?? Date()
+        }
+        //print(dateObject.timeIntervalSinceNow)
+        dateFormatter.dateFormat = "MMM"
+        let monthAbbrev = dateFormatter.string(from: dateObject)
+        dateFormatter.dateFormat = "MM"
+        let monthNum = dateFormatter.string(from: dateObject)
+        dateFormatter.dateFormat = "dd"
+        let dayNumber = dateFormatter.string(from: dateObject)
+        dateFormatter.dateFormat = "EEE"
+        let dayName = dateFormatter.string(from: dateObject)
+        dateFormatter.dateFormat = "yyyy"
+        let year = dateFormatter.string(from: dateObject)
+        
+        return [monthAbbrev,monthNum, dayNumber, dayName, year]
+    }
+    
     
 }
