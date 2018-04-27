@@ -66,6 +66,9 @@ class NotificationsDeleteController: UIViewController {
         return textView
     }()
     
+    var notificationsController: NotificationsController?
+    var indexPath: IndexPath?
+    
     var savedEvent: SavedEvent? {
         didSet {
             //titleLabel.text = calendarEvent?.name
@@ -107,6 +110,21 @@ class NotificationsDeleteController: UIViewController {
     }
     
     @objc func handleDeleteFromNotifications() {
+        
+        let deleteAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        deleteAlertController.addAction(UIAlertAction(title: "Remove from Notifications?", style: .default, handler: { (action) in
+            
+            if let indexPath = self.indexPath {
+                self.notificationsController?.handleDeleteSavedEvent(indexPath: indexPath)
+            }
+            let successAlertController = UIAlertController(title: "Success", message: "This event has been removed from your notifications", preferredStyle: .alert)
+            successAlertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+                self.handleDismiss()
+            }))
+            self.present(successAlertController, animated: true, completion: nil)
+        }))
+        deleteAlertController.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        present(deleteAlertController, animated: true, completion: nil)
         
         
         

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class HomeHeaderCell: UICollectionViewCell {
     
@@ -32,11 +33,18 @@ class HomeHeaderCell: UICollectionViewCell {
         return imageView
     }()
     
-    let checkInImageView: UIImageView = {
+    lazy var checkInImageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "SFC Check In"))
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
+    }()
+    
+    lazy var checkInButton: UIButton = {
+        let button = UIButton()
+        button.setImage(checkInImageView.image, for: .normal)
+        button.addTarget(self, action: #selector(handleCheckIn), for: .touchUpInside)
+        return button
     }()
     
     let studentServicesImageView: UIImageView = {
@@ -46,6 +54,12 @@ class HomeHeaderCell: UICollectionViewCell {
         return imageView
         
     }()
+    
+    var homeController: HomeController?
+    
+    @objc func handleCheckIn() {
+        homeController?.handleCheckIn()
+    }
    
     
     /* setupHeader:
@@ -81,9 +95,9 @@ class HomeHeaderCell: UICollectionViewCell {
         sfcImageView.anchor(top: imageSlider.bottomAnchor, paddingTop: 0, left: leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: rightAnchor, paddingRight: 0, width: 0, height: 20)
         
         // Add/anchor the check in button and the bottom label for the student services
-        addSubview(checkInImageView)
+        addSubview(checkInButton)
         addSubview(studentServicesImageView)
-        checkInImageView.anchor(top: sfcImageView.bottomAnchor, paddingTop: 10, left: leftAnchor, paddingLeft: 0, bottom: studentServicesImageView.topAnchor, paddingBotton: 10, right: rightAnchor, paddingRight: 0, width: 0, height: 0)
+        checkInButton.anchor(top: sfcImageView.bottomAnchor, paddingTop: 10, left: leftAnchor, paddingLeft: 0, bottom: studentServicesImageView.topAnchor, paddingBotton: 10, right: rightAnchor, paddingRight: 0, width: 0, height: 0)
 
         studentServicesImageView.anchor(top: nil, paddingTop: 0, left: leftAnchor, paddingLeft: 0, bottom: bottomAnchor, paddingBotton: 15, right: rightAnchor, paddingRight: 0, width: 0, height: 20)
         

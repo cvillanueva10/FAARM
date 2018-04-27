@@ -44,7 +44,7 @@ extension CalendarController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let label = IndentedLabel()
-        label.text = "Upcoming Deadlines"
+        //label.text = "Upcoming Deadlines"
         label.backgroundColor = .ucmGold
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -52,7 +52,7 @@ extension CalendarController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 30
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

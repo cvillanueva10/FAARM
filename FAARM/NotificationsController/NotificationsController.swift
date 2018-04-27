@@ -70,7 +70,7 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
     
     func setupUI() {
         
-        let customNavigationBar = setupNavBar(imageForLogo: #imageLiteral(resourceName: "Calendar Tab-1"), viewForAnchor: view)
+        let customNavigationBar = setupNavBar(imageForLogo: #imageLiteral(resourceName: "Notifications-1"), viewForAnchor: view)
         
         view.addSubview(returnButton)
         returnButton.anchor(top: customNavigationBar.bottomAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: nil, paddingRight: 0, width: 75, height: 75)
@@ -87,12 +87,34 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
     }
     
+    @objc func handleDeleteSavedEvent(indexPath: IndexPath){
+        
+        let savedEvent = self.savedEvents[indexPath.row]
+        self.savedEvents.remove(at: indexPath.row)
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        context.delete(savedEvent)
+        
+        do {
+            try  context.save()
+        } catch let saveError {
+            print("Failed to save deleting context: \(saveError)")
+        }
+       
+    }
+    
     @objc func handleDismiss() {
         dismiss(animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let notificationsDeleteController = NotificationsDeleteController()
+        notificationsDeleteController.modalPresentationStyle = .overFullScreen
+        notificationsDeleteController.modalTransitionStyle = .crossDissolve
+        notificationsDeleteController.savedEvent = savedEvents[indexPath.item]
+        notificationsDeleteController.notificationsController = self
+        notificationsDeleteController.indexPath = indexPath
         present(notificationsDeleteController, animated: true, completion: nil)
     }
     
@@ -108,6 +130,20 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return savedEvents.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let label = IndentedLabel()
+        //label.text = "Upcoming Deadlines"
+        label.backgroundColor = .ucmGold
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        return label
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

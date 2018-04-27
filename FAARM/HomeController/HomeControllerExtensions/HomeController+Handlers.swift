@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 extension HomeController {
     
@@ -29,6 +30,12 @@ extension HomeController {
         default:
             return
         }
+    }
+    
+    func handleCheckIn() {
+        let checkInLink = SFSafariViewController(url: NSURL(string: "https://ucmerced.tfaforms.net/217854")! as URL)
+        self.present(checkInLink, animated: true, completion: nil)
+        
     }
     
     func handleNotifications() {
