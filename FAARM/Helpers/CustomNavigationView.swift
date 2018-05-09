@@ -20,7 +20,6 @@ class CustomNavigationView: UIView {
         super.init(frame: frame)
         addSubview(logoImageView)
         logoImageView.anchor(top: topAnchor, paddingTop: 0, left: leftAnchor, paddingLeft: 0, bottom: bottomAnchor, paddingBotton: 0, right: rightAnchor, paddingRight: 0, width: 0, height: 0)
-        
     }
     
     func anchorNavBar(view: UIView){

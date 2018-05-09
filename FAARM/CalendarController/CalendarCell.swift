@@ -34,7 +34,7 @@ class CalendarCell: UITableViewCell {
     let dayNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Thursday"
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textColor = .ucmGold
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -56,9 +56,10 @@ class CalendarCell: UITableViewCell {
     var calendarEvent: CalendarEvent? {
         didSet {
             titleLabel.text = calendarEvent?.name
-            dayNameLabel.text = calendarEvent?.dayName
-            if let monthAbbrev = calendarEvent?.monthAbbrev, let dayNumber = calendarEvent?.dayNumber {
-                 dateLabel.text = "\(monthAbbrev) \(dayNumber)"
+            
+            if let monthAbbrev = calendarEvent?.monthAbbrev, let dayNumber = calendarEvent?.dayNumber, let year = calendarEvent?.year, let dayName = calendarEvent?.dayName {
+                dateLabel.text = "\(monthAbbrev) \(year)"
+                dayNameLabel.text = "\(dayName) \(dayNumber)"
             }
         }
     }
@@ -66,12 +67,13 @@ class CalendarCell: UITableViewCell {
     var savedEvent: SavedEvent? {
         didSet {
             titleLabel.text = savedEvent?.title
-            //dayNameLabel.text = savedEvent?.dayName
-            if let monthAbbrev = savedEvent?.monthAbbrev, let dayNumber = savedEvent?.dayNumber {
-                dateLabel.text = "\(monthAbbrev) \(dayNumber)"
+            if let monthAbbrev = savedEvent?.monthAbbrev, let dayNumber = savedEvent?.dayNumber, let year = savedEvent?.year, let dayName = savedEvent?.dayName {
+                dateLabel.text = "\(monthAbbrev) \(year)"
+                dayNameLabel.text = "\(dayName) \(dayNumber)"
             }
         }
     }
+        
     
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

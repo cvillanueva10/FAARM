@@ -25,25 +25,32 @@ class FinAidController: UICollectionViewController {
         collectionView.backgroundColor = .ucmBlue
         
         let customNavigationBar = CustomNavigationView()
+        customNavigationBar.logoImageView.contentMode = .scaleAspectFit
         customNavigationBar.logoImageView.image = #imageLiteral(resourceName: "FinAidTitle")
         collectionView.addSubview(customNavigationBar)
         customNavigationBar.anchorMiniNavBar(view: view)
+        
         
         setupUI()
         
     }
     
     @objc func handleDirectCostWorksheet() {
-        
-        dismiss(animated: true) {
-        }
-        
+        let comingSoonAlert = UIAlertController(title: "Coming Soon", message: "This feature will be implemented at a later date", preferredStyle: .alert)
+        comingSoonAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(comingSoonAlert, animated: true, completion: nil)
+    }
+    
+    
+    @objc func handleDismiss(){
+        dismiss(animated: true, completion: nil)
     }
     
     
     @objc func handleFinAidForms() {
-        
-        
+        let comingSoonAlert = UIAlertController(title: "Coming Soon", message: "This feature will be implemented at a later date", preferredStyle: .alert)
+        comingSoonAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(comingSoonAlert, animated: true, completion: nil)
         }
     
     

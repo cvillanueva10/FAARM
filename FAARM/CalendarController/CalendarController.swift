@@ -8,12 +8,18 @@
 
 import UIKit
 
-class CalendarController: UITableViewController {
+class CalendarController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let statusBarBackground: UIView = {
         let view = UIView()
         view.backgroundColor = .ucmBlue
         return view
+    }()
+    
+    let tableView: UITableView = {
+        let tv = UITableView(frame: .zero)
+        tv.backgroundColor = .ucmBlue
+        return tv
     }()
     
     lazy var returnButton: UIButton = {
@@ -53,27 +59,23 @@ class CalendarController: UITableViewController {
     
     func setupUI() {
         
-        tableView.backgroundColor = .ucmBlue
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorColor = .clear
-
-        let customNavigationBar = setupNavBar(imageForLogo: #imageLiteral(resourceName: "Calendar Tab-1"), viewForAnchor: self.tableView)
+        view.backgroundColor = .ucmBlue
+        
+        let customNavigationBar = setupNavBar(imageForLogo: #imageLiteral(resourceName: "Calendar Tab-1"), viewForAnchor: view)
         
         // Acts as a background for status bar and so text doesnt peek through
-        view.addSubview(statusBarBackground)
-        statusBarBackground.anchor(top: view.topAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: view.rightAnchor, paddingRight: 0, width: 0, height: 20)
-    
         view.addSubview(returnButton)
         returnButton.anchor(top: customNavigationBar.bottomAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: nil, paddingRight: 0, width: 75, height: 75)
         
         view.addSubview(headerLabel)
         headerLabel.anchor(top: customNavigationBar.bottomAnchor, paddingTop: 0, left: returnButton.rightAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: view.safeAreaLayoutGuide.rightAnchor, paddingRight: 0, width: 0, height: 75)
         
+        view.addSubview(tableView)
+        tableView.anchor(top: headerLabel.bottomAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: view.bottomAnchor, paddingBotton: 0, right: view.rightAnchor, paddingRight: 0, width: 0, height: 0)
         tableView.register(CalendarCell.self, forCellReuseIdentifier: cellId)
-        let customNavBarHeight = view.frame.height * 0.078
-        let offsetHeight = customNavBarHeight + 75
-        tableView.contentInset = UIEdgeInsetsMake(offsetHeight, 0, 0, 0)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorColor = .clear
     }
     
     @objc func handleDismiss() {

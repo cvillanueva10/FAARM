@@ -8,7 +8,6 @@
 
 import CoreData
 
-
 struct CoreDataManager {
     
     static let shared = CoreDataManager() // will live forever if application is still alive

@@ -7,8 +7,16 @@
 //
 
 import UIKit
+import SafariServices
 
 class RegistrarController: UICollectionViewController {
+    
+    let UniversityImageView: UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "UniversityBackground"))
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
     
     override func viewDidLoad() {
@@ -20,8 +28,37 @@ class RegistrarController: UICollectionViewController {
         let customNavigationBar = CustomNavigationView()
         customNavigationBar.logoImageView.image = #imageLiteral(resourceName: "Registrar Title-1")
         collectionView.addSubview(customNavigationBar)
-        customNavigationBar.anchorMiniNavBar(view: self.view)
+        customNavigationBar.anchorMiniNavBar(view: view)
+        
+        setupUI()
         
     }
+    
+    @objc func handleResourceButton() {
+        let comingSoonAlert = UIAlertController(title: "Coming Soon", message: "This feature will be implemented at a later date", preferredStyle: .alert)
+        comingSoonAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(comingSoonAlert, animated: true, completion: nil)
+       
+        
+    }
+    
+    @objc func handleTutorialsButton() {
+        let comingSoonAlert = UIAlertController(title: "Coming Soon", message: "This feature will be implemented at a later date", preferredStyle: .alert)
+        comingSoonAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(comingSoonAlert, animated: true, completion: nil)
+    }
+    
+    @objc func handleWebsiteButton() {
+        
+        let svc = SFSafariViewController(url: NSURL(string: "http://registrar.ucmerced.edu/")! as URL)
+        self.present(svc, animated: true, completion: nil)
+        
+    }
+    
+    @objc func handleDismiss(){
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 

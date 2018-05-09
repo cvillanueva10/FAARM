@@ -70,19 +70,21 @@ class CalendarAddController: UIViewController {
     var monthAbbrev: String?
     var dayNumber: String?
     var dayName: String?
+    var year: String?
     
     var calendarController: CalendarController?
     
     var calendarEvent: CalendarEvent? {
         didSet {
            //titleLabel.text = calendarEvent?.name
-            if let dayName = calendarEvent?.dayName, let monthAbbrev = calendarEvent?.monthAbbrev, let dayNumber = calendarEvent?.dayNumber{
+            if let dayName = calendarEvent?.dayName, let monthAbbrev = calendarEvent?.monthAbbrev, let dayNumber = calendarEvent?.dayNumber, let year = calendarEvent?.year{
                 let attributedText = NSMutableAttributedString(string: "Date : ", attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 22), NSAttributedStringKey.foregroundColor: UIColor.white])
                 attributedText.append(NSAttributedString(string: "\(dayName), \(monthAbbrev) \(dayNumber)", attributes: [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 22), NSAttributedStringKey.foregroundColor: UIColor.white]))
                 dateLabel.attributedText = attributedText
                 self.monthAbbrev = monthAbbrev
                 self.dayNumber = dayNumber
                 self.dayName = dayName
+                self.year = year
             }
             descriptionTextView.text = calendarEvent?.name
             
@@ -119,17 +121,20 @@ class CalendarAddController: UIViewController {
     // as updates
     @objc func handleSave() {
         
-        let context = CoreDataManager.shared.persistentContainer.viewContext
-        let savedEvent = NSEntityDescription.insertNewObject(forEntityName: "SavedEvent", into: context)
-        savedEvent.setValue(descriptionTextView.text, forKey: "title")
-        savedEvent.setValue(monthAbbrev, forKey: "monthAbbrev")
-        savedEvent.setValue(dayNumber, forKey: "dayNumber")
-        savedEvent.setValue(dayName, forKey: "dayName")
-        do {
-            try context.save()
-        } catch let saveError {
-            print("Failed to save company: \(saveError)")
-        }
+//        let context = CoreDataManager.shared.persistentContainer.viewContext
+//        let savedEvent = NSEntityDescription.insertNewObject(forEntityName: "SavedEvent", into: context)
+//        savedEvent.setValue(descriptionTextView.text, forKey: "title")
+//        savedEvent.setValue(monthAbbrev, forKey: "monthAbbrev")
+//        savedEvent.setValue(dayNumber, forKey: "dayNumber")
+//        savedEvent.setValue(dayName, forKey: "dayName")
+//        savedEvent.setValue(year, forKey: "year")
+//        do {
+//            try context.save()
+//        } catch let saveError {
+//            print("Failed to save company: \(saveError)")
+//        }
+        
+        
     }
     
     @objc func handleDismiss() {

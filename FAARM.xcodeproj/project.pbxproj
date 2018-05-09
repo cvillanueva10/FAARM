@@ -16,6 +16,9 @@
 		5655CB8220798540000599E5 /* MSAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5655CB8120798540000599E5 /* MSAL.framework */; };
 		5655CB8A20798C81000599E5 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655CB8920798C81000599E5 /* CalendarController.swift */; };
 		56855358207DABB600170885 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56855357207DABB500170885 /* CalendarEvent.swift */; };
+		5685CDF520A2B56B00E4FCD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5685CDF420A2B56B00E4FCD1 /* GoogleService-Info.plist */; };
+		5685CDF820A2C19100E4FCD1 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CDF720A2C19100E4FCD1 /* RegisterController.swift */; };
+		5685CDFA20A2C1A300E4FCD1 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CDF920A2C1A300E4FCD1 /* LoginController.swift */; };
 		569C30D02059F79B00C1A19D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30CF2059F79B00C1A19D /* Extensions.swift */; };
 		569C30D2205B978C00C1A19D /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30D1205B978C00C1A19D /* HomeHeaderCell.swift */; };
 		569C30D4205B9B1F00C1A19D /* HomeBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30D3205B9B1F00C1A19D /* HomeBodyCell.swift */; };
@@ -35,11 +38,11 @@
 		56AE584020901612002F3C51 /* FinAidControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE583D20901611002F3C51 /* FinAidControllerHelper.swift */; };
 		56AE584120901612002F3C51 /* FinAidControllerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE583E20901611002F3C51 /* FinAidControllerSetup.swift */; };
 		56AE584220901612002F3C51 /* FinAidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE583F20901611002F3C51 /* FinAidController.swift */; };
-		56AE58482090164E002F3C51 /* RegistrarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE58442090164E002F3C51 /* RegistrarController.swift */; };
-		56AE58492090164E002F3C51 /* RegistrarControllerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE58462090164E002F3C51 /* RegistrarControllerSetup.swift */; };
-		56AE584A2090164E002F3C51 /* RegistrarControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE58472090164E002F3C51 /* RegistrarControllerHelper.swift */; };
 		56AE584C20907D31002F3C51 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE584B20907D31002F3C51 /* CoreDataManager.swift */; };
 		56AE584E209162BF002F3C51 /* NotificationsDeleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE584D209162BF002F3C51 /* NotificationsDeleteController.swift */; };
+		56B06CAF2094632800B524AF /* RegistrarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B06CAB2094632800B524AF /* RegistrarController.swift */; };
+		56B06CB02094632800B524AF /* RegistrarControllerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B06CAD2094632800B524AF /* RegistrarControllerSetup.swift */; };
+		56B06CB12094632800B524AF /* RegistrarControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B06CAE2094632800B524AF /* RegistrarControllerHelper.swift */; };
 		56B5D4EC2059DADB00381FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D4EB2059DADB00381FF6 /* AppDelegate.swift */; };
 		56B5D4EE2059DADB00381FF6 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D4ED2059DADB00381FF6 /* HomeController.swift */; };
 		56B5D4F12059DADB00381FF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D4EF2059DADB00381FF6 /* Main.storyboard */; };
@@ -51,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		36A6B0F7ADB10BC1F6E988DB /* Pods_FAARM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FAARM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5638D1972093E0C5008D0757 /* FAARM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FAARM.entitlements; sourceTree = "<group>"; };
 		5640ED012087384800BE1FB1 /* CalendarController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarController+TableView.swift"; sourceTree = "<group>"; };
 		5640ED0420873CB900BE1FB1 /* CalendarAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddController.swift; sourceTree = "<group>"; };
 		564F557C20853BC00060E974 /* CalendarController+getJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarController+getJSON.swift"; sourceTree = "<group>"; };
@@ -60,6 +64,9 @@
 		5655CB8120798540000599E5 /* MSAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MSAL.framework; path = Carthage/Build/iOS/MSAL.framework; sourceTree = "<group>"; };
 		5655CB8920798C81000599E5 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		56855357207DABB500170885 /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
+		5685CDF420A2B56B00E4FCD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5685CDF720A2C19100E4FCD1 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		5685CDF920A2C1A300E4FCD1 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		569C30CF2059F79B00C1A19D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		569C30D1205B978C00C1A19D /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
 		569C30D3205B9B1F00C1A19D /* HomeBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBodyCell.swift; sourceTree = "<group>"; };
@@ -79,11 +86,11 @@
 		56AE583D20901611002F3C51 /* FinAidControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinAidControllerHelper.swift; sourceTree = "<group>"; };
 		56AE583E20901611002F3C51 /* FinAidControllerSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinAidControllerSetup.swift; sourceTree = "<group>"; };
 		56AE583F20901611002F3C51 /* FinAidController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinAidController.swift; sourceTree = "<group>"; };
-		56AE58442090164E002F3C51 /* RegistrarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrarController.swift; sourceTree = "<group>"; };
-		56AE58462090164E002F3C51 /* RegistrarControllerSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrarControllerSetup.swift; sourceTree = "<group>"; };
-		56AE58472090164E002F3C51 /* RegistrarControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrarControllerHelper.swift; sourceTree = "<group>"; };
 		56AE584B20907D31002F3C51 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		56AE584D209162BF002F3C51 /* NotificationsDeleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsDeleteController.swift; sourceTree = "<group>"; };
+		56B06CAB2094632800B524AF /* RegistrarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrarController.swift; sourceTree = "<group>"; };
+		56B06CAD2094632800B524AF /* RegistrarControllerSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrarControllerSetup.swift; sourceTree = "<group>"; };
+		56B06CAE2094632800B524AF /* RegistrarControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrarControllerHelper.swift; sourceTree = "<group>"; };
 		56B5D4E82059DADB00381FF6 /* FAARM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FAARM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B5D4EB2059DADB00381FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56B5D4ED2059DADB00381FF6 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -156,6 +163,25 @@
 				56E4C8102080865A00ECEE9A /* CalendarCell.swift */,
 			);
 			path = CalendarController;
+			sourceTree = "<group>";
+		};
+		5685CDF620A2C16200E4FCD1 /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				5685CDF720A2C19100E4FCD1 /* RegisterController.swift */,
+				5685CDF920A2C1A300E4FCD1 /* LoginController.swift */,
+			);
+			path = LoginController;
+			sourceTree = "<group>";
+		};
+		5685CDFB20A2D0CB00E4FCD1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				569C30CF2059F79B00C1A19D /* Extensions.swift */,
+				56AE584B20907D31002F3C51 /* CoreDataManager.swift */,
+				569C30D72061639F00C1A19D /* CustomNavigationView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		569C30D92061721200C1A19D /* HomeControllerExtensions */ = {
@@ -243,20 +269,20 @@
 			path = FinAidControllerExtensions;
 			sourceTree = "<group>";
 		};
-		56AE58432090164E002F3C51 /* RegistrarController */ = {
+		56B06CAA2094632800B524AF /* RegistrarController */ = {
 			isa = PBXGroup;
 			children = (
-				56AE58442090164E002F3C51 /* RegistrarController.swift */,
-				56AE58452090164E002F3C51 /* RegistrarControllerExtensions */,
+				56B06CAB2094632800B524AF /* RegistrarController.swift */,
+				56B06CAC2094632800B524AF /* RegistrarControllerExtensions */,
 			);
 			path = RegistrarController;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 		};
-		56AE58452090164E002F3C51 /* RegistrarControllerExtensions */ = {
+		56B06CAC2094632800B524AF /* RegistrarControllerExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				56AE58462090164E002F3C51 /* RegistrarControllerSetup.swift */,
-				56AE58472090164E002F3C51 /* RegistrarControllerHelper.swift */,
+				56B06CAD2094632800B524AF /* RegistrarControllerSetup.swift */,
+				56B06CAE2094632800B524AF /* RegistrarControllerHelper.swift */,
 			);
 			path = RegistrarControllerExtensions;
 			sourceTree = "<group>";
@@ -282,21 +308,22 @@
 		56B5D4EA2059DADB00381FF6 /* FAARM */ = {
 			isa = PBXGroup;
 			children = (
+				5638D1972093E0C5008D0757 /* FAARM.entitlements */,
 				56B5D4EB2059DADB00381FF6 /* AppDelegate.swift */,
-				569C30D72061639F00C1A19D /* CustomNavigationView.swift */,
-				56AE584B20907D31002F3C51 /* CoreDataManager.swift */,
-				569C30CF2059F79B00C1A19D /* Extensions.swift */,
-				56AE58432090164E002F3C51 /* RegistrarController */,
+				5685CDFB20A2D0CB00E4FCD1 /* Helpers */,
+				56B06CAA2094632800B524AF /* RegistrarController */,
 				56AE583B20901611002F3C51 /* FinAidController */,
 				56AE5832208FB9B0002F3C51 /* AdmissionsController */,
 				5655CB8820798C66000599E5 /* CalendarController */,
 				569C30DF206DB4DF00C1A19D /* ContactController */,
 				56AE5825208F1FB7002F3C51 /* NotificationsController */,
 				569C30DC206B32F800C1A19D /* HomeController */,
+				5685CDF620A2C16200E4FCD1 /* LoginController */,
 				56B5D4EF2059DADB00381FF6 /* Main.storyboard */,
 				56B5D4F22059DADB00381FF6 /* Assets.xcassets */,
 				56B5D4F42059DADB00381FF6 /* LaunchScreen.storyboard */,
 				56B5D4F72059DADB00381FF6 /* Info.plist */,
+				5685CDF420A2B56B00E4FCD1 /* GoogleService-Info.plist */,
 				56AE581F208F1CF4002F3C51 /* FAARMDataModels.xcdatamodeld */,
 			);
 			path = FAARM;
@@ -332,6 +359,7 @@
 				56B5D4E52059DADB00381FF6 /* Frameworks */,
 				56B5D4E62059DADB00381FF6 /* Resources */,
 				5655CB8320798555000599E5 /* ShellScript */,
+				9B095311E692F0C5B798F69C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -355,6 +383,11 @@
 					56B5D4E72059DADB00381FF6 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -382,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56B5D4F62059DADB00381FF6 /* LaunchScreen.storyboard in Resources */,
+				5685CDF520A2B56B00E4FCD1 /* GoogleService-Info.plist in Resources */,
 				56B5D4F32059DADB00381FF6 /* Assets.xcassets in Resources */,
 				56B5D4F12059DADB00381FF6 /* Main.storyboard in Resources */,
 			);
@@ -403,6 +437,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		9B095311E692F0C5B798F69C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FAARM/Pods-FAARM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FAARM/Pods-FAARM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		A7EEBD352D2230BCD371FE7D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -430,7 +488,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5640ED0520873CB900BE1FB1 /* CalendarAddController.swift in Sources */,
-				56AE58492090164E002F3C51 /* RegistrarControllerSetup.swift in Sources */,
 				564F558120859AF10060E974 /* MessageView.swift in Sources */,
 				5655CB8A20798C81000599E5 /* CalendarController.swift in Sources */,
 				56AE584C20907D31002F3C51 /* CoreDataManager.swift in Sources */,
@@ -438,15 +495,18 @@
 				56AE584E209162BF002F3C51 /* NotificationsDeleteController.swift in Sources */,
 				564F557D20853BC00060E974 /* CalendarController+getJSON.swift in Sources */,
 				56AE5838208FB9B0002F3C51 /* AdmissionsController.swift in Sources */,
+				5685CDF820A2C19100E4FCD1 /* RegisterController.swift in Sources */,
 				56AE5821208F1CF4002F3C51 /* FAARMDataModels.xcdatamodeld in Sources */,
 				569C30DE206C49BE00C1A19D /* HomeSliderView.swift in Sources */,
 				564F558320859FD20060E974 /* UserInputView.swift in Sources */,
-				56AE58482090164E002F3C51 /* RegistrarController.swift in Sources */,
+				56B06CB02094632800B524AF /* RegistrarControllerSetup.swift in Sources */,
 				56AE584120901612002F3C51 /* FinAidControllerSetup.swift in Sources */,
+				56B06CAF2094632800B524AF /* RegistrarController.swift in Sources */,
 				569C30D4205B9B1F00C1A19D /* HomeBodyCell.swift in Sources */,
 				56AE584020901612002F3C51 /* FinAidControllerHelper.swift in Sources */,
 				56B5D4EE2059DADB00381FF6 /* HomeController.swift in Sources */,
 				56855358207DABB600170885 /* CalendarEvent.swift in Sources */,
+				56B06CB12094632800B524AF /* RegistrarControllerHelper.swift in Sources */,
 				569C30D2205B978C00C1A19D /* HomeHeaderCell.swift in Sources */,
 				56AE5839208FB9B0002F3C51 /* AdmissionsControllerSetup.swift in Sources */,
 				569C30E6206DB7FF00C1A19D /* ContactController+SetupUI.swift in Sources */,
@@ -458,10 +518,10 @@
 				56AE584220901612002F3C51 /* FinAidController.swift in Sources */,
 				569C30E1206DB50600C1A19D /* ContactController.swift in Sources */,
 				56E4C8112080865A00ECEE9A /* CalendarCell.swift in Sources */,
-				56AE584A2090164E002F3C51 /* RegistrarControllerHelper.swift in Sources */,
 				564F557F208598ED0060E974 /* MessageController.swift in Sources */,
 				569C30D02059F79B00C1A19D /* Extensions.swift in Sources */,
 				569C30E8206E017800C1A19D /* HomeController+Handlers.swift in Sources */,
+				5685CDFA20A2C1A300E4FCD1 /* LoginController.swift in Sources */,
 				56AE581E208EFB93002F3C51 /* CalendarAddController+SetupUI.swift in Sources */,
 				56B5D4EC2059DADB00381FF6 /* AppDelegate.swift in Sources */,
 			);
@@ -606,16 +666,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = FAARM/FAARM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BMLYZWR33S;
+				DEVELOPMENT_TEAM = LQ2DT4KW5D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = FAARM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chrisvillanueva.FAARM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisvillanueva.FAARMPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -628,16 +689,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = FAARM/FAARM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BMLYZWR33S;
+				DEVELOPMENT_TEAM = LQ2DT4KW5D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = FAARM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chrisvillanueva.FAARM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisvillanueva.FAARMPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

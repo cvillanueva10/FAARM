@@ -36,10 +36,14 @@ class AdmissionsController: UICollectionViewController {
         
         @objc func handleMajorsTab() {
             
-            //will open up a page listing all of the majors available at UCM
-            dismiss(animated: true) {
-            }
+            let comingSoonAlert = UIAlertController(title: "Coming Soon", message: "This feature will be implemented at a later date", preferredStyle: .alert)
+            comingSoonAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(comingSoonAlert, animated: true, completion: nil)
             
+        }
+    
+        @objc func handleDismiss(){
+            dismiss(animated: true, completion: nil)
         }
         
         

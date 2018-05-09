@@ -66,21 +66,20 @@ class HomeHeaderCell: UICollectionViewCell {
      * This function will add everything we declared above this and anchor to the scene
      * The components are declared in order from top to bottom so that everything can
      * be anchored to one another
-    */
+     */
     func setupHeader() {
         
         // Add Custom navigation bar and anchor it to this UIView
         addSubview(customNavigationBar)
         customNavigationBar.anchorNavBar(view: self)
-      
         
         // Add and anchor the announcements label
         addSubview(announcementsImageView)
         announcementsImageView.anchor(top: customNavigationBar.bottomAnchor, paddingTop: 0, left: leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: rightAnchor, paddingRight: 0, width: 0, height: 20)
         
+    //  Define image slider and then add/anchor it
+    //  let imageSliderLayout = UICollectionViewLayout()
         
-        // Define image slider and then add/anchor it
-      //  let imageSliderLayout = UICollectionViewLayout()
         let imageSlider = HomeSliderView()
         let imageSliderHeight = frame.width * 0.42
         imageSlider.screenWidth = frame.width // we need so that the slider knows how big the screen is

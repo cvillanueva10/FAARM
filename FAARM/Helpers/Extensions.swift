@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 extension UIColor {
     
     static let ucmBlue = UIColor.rgb(red: 9, green: 47, blue: 68)
@@ -56,6 +55,8 @@ extension UIView {
     }
 }
 
+
+
 extension UIViewController {
     
     class IndentedLabel: UILabel {
@@ -75,6 +76,11 @@ extension UIViewController {
         
         return customMiniNavBar
         
+    }
+    
+    func presentRequiredLogin(){
+        let loginController = LoginController()
+        present(loginController, animated: true, completion: nil)
     }
     
     func formatDateObj(startDict: NSDictionary, dateFormatter: DateFormatter) -> [String] {

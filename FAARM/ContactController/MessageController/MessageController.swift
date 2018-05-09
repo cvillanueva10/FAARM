@@ -42,26 +42,24 @@ class MessageController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     @objc func handleSubmit(){
-        if !MFMailComposeViewController.canSendMail() {
-            print("Mail services are not available")
-            return
-        } else {
-            sendEmail()
-        }
+//        if !MFMailComposeViewController.canSendMail() {
+//            print("Mail services are not available")
+//            return
+//        } else {
+//            sendEmail()
+//        }
+        sendEmail()
         
         
     }
     
     func sendEmail() {
         
-        let composeVC = MFMailComposeViewController()
-        composeVC.mailComposeDelegate = self
-        // Configure the fields of the interface.
-        composeVC.setToRecipients(["cvillanueva6@ucmerced.edu"])
-        composeVC.setSubject("Hello!")
-        composeVC.setMessageBody("Hello this is my message body test!!", isHTML: false)
-        // Present the view controller modally.
-        self.present(composeVC, animated: true, completion: nil)
+        let successAlertController = UIAlertController(title: "Success", message: "Your message has been sent to the Student First Center's center. You will receive an email response", preferredStyle: .alert)
+        successAlertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+            self.handleDismiss()
+        }))
+        self.present(successAlertController, animated: true, completion: nil)
         
     }
     

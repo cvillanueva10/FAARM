@@ -50,6 +50,6 @@ extension ContactController {
         contactLabelsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         view.addSubview(dismissButton)
-        dismissButton.anchor(top: nil, paddingTop: 0, left: nil, paddingLeft: 0, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBotton: 0, right: view.rightAnchor, paddingRight: 10, width: 75, height: 100)
+        dismissButton.anchor(top: nil, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBotton: 0, right: nil, paddingRight: 10, width: 75, height: 100)
     }
 }

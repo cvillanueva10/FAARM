@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import Firebase
 
 extension HomeController {
     
@@ -32,6 +33,7 @@ extension HomeController {
         }
     }
     
+    
     func handleCheckIn() {
         let checkInLink = SFSafariViewController(url: NSURL(string: "https://ucmerced.tfaforms.net/217854")! as URL)
         self.present(checkInLink, animated: true, completion: nil)
@@ -39,8 +41,15 @@ extension HomeController {
     }
     
     func handleNotifications() {
-        let notificationsController = NotificationsController()
-        present(notificationsController, animated: true, completion: nil)
+        
+        if Auth.auth().currentUser == nil {
+            let loginController = LoginController()
+            present(loginController, animated: true, completion: nil)
+        } else {
+            let notificationsController = NotificationsController()
+            present(notificationsController, animated: true, completion: nil)
+        }
+       
     }
     
     func handleCalendar() {

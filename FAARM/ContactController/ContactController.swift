@@ -29,7 +29,8 @@ class ContactController: UIViewController {
     
     lazy var dismissButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .blue
+        button.tintColor = .white
+        button.setImage(#imageLiteral(resourceName: "back_arrow").withRenderingMode(.alwaysTemplate), for: .normal)
         button.addTarget(self, action: #selector(handleDismiss), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button

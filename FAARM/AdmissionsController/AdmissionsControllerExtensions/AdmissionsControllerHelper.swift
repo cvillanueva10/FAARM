@@ -28,5 +28,13 @@ extension AdmissionsController {
     button.contentMode = .scaleAspectFill
     return button
     }
+    
+    @objc func createBackButton(image: UIImage, handler: Selector ) -> UIButton {
+        let button = UIButton()
+        button.setImage(image, for: .normal)
+        button.addTarget(self, action: handler, for: .touchUpInside)
+        button.contentMode = .scaleAspectFill
+        return button
+    }
 
 }

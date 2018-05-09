@@ -56,16 +56,11 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
         
         do {
             let savedEvents = try context.fetch(fetchRequest)
-            savedEvents.forEach { (event) in
-                print(event.monthAbbrev ?? "")
-            }
             self.savedEvents = savedEvents
             self.tableView.reloadData()
         } catch let fetchError {
             print("Failed to fetch events: \(fetchError)")
         }
-        
-        
     }
     
     func setupUI() {
@@ -95,13 +90,11 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
         
         let context = CoreDataManager.shared.persistentContainer.viewContext
         context.delete(savedEvent)
-        
         do {
             try  context.save()
         } catch let saveError {
             print("Failed to save deleting context: \(saveError)")
         }
-       
     }
     
     @objc func handleDismiss() {
@@ -133,7 +126,6 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
         let label = IndentedLabel()
         //label.text = "Upcoming Deadlines"
         label.backgroundColor = .ucmGold
@@ -158,9 +150,5 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return savedEvents.count == 0 ? 150 : 0
     }
-    
-    
-    
-    
     
 }

@@ -121,7 +121,7 @@ class MessageView: UICollectionViewCell, UIPickerViewDelegate, UIPickerViewDataS
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.addTarget(self, action: #selector(handleSubmit), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleSubmit), for: .editingChanged)
         button.isEnabled = false
         return button
     }()
@@ -152,7 +152,7 @@ class MessageView: UICollectionViewCell, UIPickerViewDelegate, UIPickerViewDataS
     }
     
     @objc private func handleTextInputChange() {
-        let isFormValid = firstNameView.inputTextField.text?.count ?? 0 > 0 && lastNameView.inputTextField.text?.count ?? 0 > 0 && emailView.inputTextField.text?.count ?? 0 > 0 && phoneNumberView.inputTextField.text?.count ?? 0 > 0 && descriptionView.inputTextField.text?.count ?? 0 > 0 && messageTextView.text.count > 0
+        let isFormValid = firstNameView.inputTextField.text?.count ?? 0 > 0 && lastNameView.inputTextField.text?.count ?? 0 > 0 && emailView.inputTextField.text?.count ?? 0 > 0 && phoneNumberView.inputTextField.text?.count ?? 0 > 0 && descriptionView.inputTextField.text?.count ?? 0 > 0 /* && messageTextView.text.count > 0*/
     
         
         if isFormValid {

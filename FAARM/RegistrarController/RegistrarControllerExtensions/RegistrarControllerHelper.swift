@@ -1,5 +1,5 @@
 //
-//  FinAidControllerHelper.swift
+//  RegistrarControllerHelper.swift
 //  FAARM
 //
 //  Created by Nathan Huizar on 4/11/18.
@@ -8,34 +8,30 @@
 
 import UIKit
 
-extension FinAidController {
+
+extension RegistrarController {
     
-    
-    @objc func createDirectCostWorksheetButton(image: UIImage, handler: Selector  ) -> UIButton {
+    @objc func createResourceButton(image: UIImage, handler: Selector ) -> UIButton {
         let button = UIButton()
         button.setImage(image, for: .normal)
         button.addTarget(self, action: handler, for: .touchUpInside)
-        button.contentMode = .scaleAspectFill
+        button.contentMode = .scaleAspectFit
         return button
     }
     
-    
-    
-    @objc func createFinAidFormsButton(image: UIImage, handler: Selector  ) -> UIButton {
+    @objc func createTutorialsButton(image: UIImage, handler: Selector ) -> UIButton {
         let button = UIButton()
         button.setImage(image, for: .normal)
         button.addTarget(self, action: handler, for: .touchUpInside)
-        button.contentMode = .scaleAspectFill
+        button.contentMode = .scaleAspectFit
         return button
     }
     
-    
-    
-    @objc func createFinWebsiteButton(image: UIImage, handler: Selector  ) -> UIButton {
+    @objc func createWebsiteButton(image: UIImage, handler: Selector ) -> UIButton {
         let button = UIButton()
         button.setImage(image, for: .normal)
         button.addTarget(self, action: handler, for: .touchUpInside)
-        button.contentMode = .scaleAspectFill
+        button.contentMode = .scaleAspectFit
         return button
     }
     

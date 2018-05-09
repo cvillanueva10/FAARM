@@ -5,8 +5,9 @@
         <attribute name="dayNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="monthAbbrev" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SavedEvent" positionX="-54" positionY="-9" width="128" height="105"/>
+        <element name="SavedEvent" positionX="-54" positionY="-9" width="128" height="120"/>
     </elements>
 </model>
