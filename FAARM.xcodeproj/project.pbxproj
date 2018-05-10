@@ -19,6 +19,17 @@
 		5685CDF520A2B56B00E4FCD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5685CDF420A2B56B00E4FCD1 /* GoogleService-Info.plist */; };
 		5685CDF820A2C19100E4FCD1 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CDF720A2C19100E4FCD1 /* RegisterController.swift */; };
 		5685CDFA20A2C1A300E4FCD1 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CDF920A2C1A300E4FCD1 /* LoginController.swift */; };
+		5685CDFF20A3E29300E4FCD1 /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CDFE20A3E29300E4FCD1 /* RssParser.swift */; };
+		5685CE0220A3EF4000E4FCD1 /* FinAidFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CE0120A3EF4000E4FCD1 /* FinAidFormController.swift */; };
+		5685CE0420A3F5B200E4FCD1 /* CalendarController+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CE0320A3F5B200E4FCD1 /* CalendarController+SetupUI.swift */; };
+		5685CE0620A3F60800E4FCD1 /* CalendarAddController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CE0520A3F60800E4FCD1 /* CalendarAddController+Handlers.swift */; };
+		5685CE0920A3F66D00E4FCD1 /* NotificationsController+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CE0820A3F66D00E4FCD1 /* NotificationsController+SetupUI.swift */; };
+		5685CE0B20A3F67D00E4FCD1 /* NotificationsController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CE0A20A3F67D00E4FCD1 /* NotificationsController+UITableView.swift */; };
+		5685CE0E20A3F74E00E4FCD1 /* NotificationsDeleteController+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CE0D20A3F74E00E4FCD1 /* NotificationsDeleteController+SetupUI.swift */; };
+		5685CE1020A3F75E00E4FCD1 /* NotificationsDeleteController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CE0F20A3F75E00E4FCD1 /* NotificationsDeleteController+Handlers.swift */; };
+		5685CE1420A3F85300E4FCD1 /* RegisterController+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CE1320A3F85300E4FCD1 /* RegisterController+SetupUI.swift */; };
+		5685CE1620A3F86700E4FCD1 /* RegisterController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CE1520A3F86700E4FCD1 /* RegisterController+Handlers.swift */; };
+		5685CE1820A3F91800E4FCD1 /* LoginController+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CE1720A3F91800E4FCD1 /* LoginController+SetupUI.swift */; };
 		569C30D02059F79B00C1A19D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30CF2059F79B00C1A19D /* Extensions.swift */; };
 		569C30D2205B978C00C1A19D /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30D1205B978C00C1A19D /* HomeHeaderCell.swift */; };
 		569C30D4205B9B1F00C1A19D /* HomeBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30D3205B9B1F00C1A19D /* HomeBodyCell.swift */; };
@@ -67,6 +78,17 @@
 		5685CDF420A2B56B00E4FCD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5685CDF720A2C19100E4FCD1 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5685CDF920A2C1A300E4FCD1 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		5685CDFE20A3E29300E4FCD1 /* RssParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssParser.swift; sourceTree = "<group>"; };
+		5685CE0120A3EF4000E4FCD1 /* FinAidFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinAidFormController.swift; sourceTree = "<group>"; };
+		5685CE0320A3F5B200E4FCD1 /* CalendarController+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarController+SetupUI.swift"; sourceTree = "<group>"; };
+		5685CE0520A3F60800E4FCD1 /* CalendarAddController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarAddController+Handlers.swift"; sourceTree = "<group>"; };
+		5685CE0820A3F66D00E4FCD1 /* NotificationsController+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationsController+SetupUI.swift"; sourceTree = "<group>"; };
+		5685CE0A20A3F67D00E4FCD1 /* NotificationsController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationsController+UITableView.swift"; sourceTree = "<group>"; };
+		5685CE0D20A3F74E00E4FCD1 /* NotificationsDeleteController+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationsDeleteController+SetupUI.swift"; sourceTree = "<group>"; };
+		5685CE0F20A3F75E00E4FCD1 /* NotificationsDeleteController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationsDeleteController+Handlers.swift"; sourceTree = "<group>"; };
+		5685CE1320A3F85300E4FCD1 /* RegisterController+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterController+SetupUI.swift"; sourceTree = "<group>"; };
+		5685CE1520A3F86700E4FCD1 /* RegisterController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterController+Handlers.swift"; sourceTree = "<group>"; };
+		5685CE1720A3F91800E4FCD1 /* LoginController+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginController+SetupUI.swift"; sourceTree = "<group>"; };
 		569C30CF2059F79B00C1A19D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		569C30D1205B978C00C1A19D /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
 		569C30D3205B9B1F00C1A19D /* HomeBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBodyCell.swift; sourceTree = "<group>"; };
@@ -130,6 +152,7 @@
 			children = (
 				5640ED0420873CB900BE1FB1 /* CalendarAddController.swift */,
 				56AE581D208EFB92002F3C51 /* CalendarAddController+SetupUI.swift */,
+				5685CE0520A3F60800E4FCD1 /* CalendarAddController+Handlers.swift */,
 			);
 			path = CalendarAddController;
 			sourceTree = "<group>";
@@ -139,6 +162,7 @@
 			children = (
 				564F557C20853BC00060E974 /* CalendarController+getJSON.swift */,
 				5640ED012087384800BE1FB1 /* CalendarController+TableView.swift */,
+				5685CE0320A3F5B200E4FCD1 /* CalendarController+SetupUI.swift */,
 			);
 			path = CalendarControllerExtensions;
 			sourceTree = "<group>";
@@ -156,22 +180,24 @@
 		5655CB8820798C66000599E5 /* CalendarController */ = {
 			isa = PBXGroup;
 			children = (
-				5640ED0320873C9400BE1FB1 /* CalendarAddController */,
-				564F557B20853BA20060E974 /* CalendarControllerExtensions */,
 				5655CB8920798C81000599E5 /* CalendarController.swift */,
 				56855357207DABB500170885 /* CalendarEvent.swift */,
 				56E4C8102080865A00ECEE9A /* CalendarCell.swift */,
+				564F557B20853BA20060E974 /* CalendarControllerExtensions */,
+				5640ED0320873C9400BE1FB1 /* CalendarAddController */,
 			);
 			path = CalendarController;
 			sourceTree = "<group>";
 		};
-		5685CDF620A2C16200E4FCD1 /* LoginController */ = {
+		5685CDF620A2C16200E4FCD1 /* LoginRegisterController */ = {
 			isa = PBXGroup;
 			children = (
 				5685CDF720A2C19100E4FCD1 /* RegisterController.swift */,
 				5685CDF920A2C1A300E4FCD1 /* LoginController.swift */,
+				5685CE1120A3F80200E4FCD1 /* LoginControllerExtensions */,
+				5685CE1220A3F81400E4FCD1 /* RegisterControllerExtensions */,
 			);
-			path = LoginController;
+			path = LoginRegisterController;
 			sourceTree = "<group>";
 		};
 		5685CDFB20A2D0CB00E4FCD1 /* Helpers */ = {
@@ -180,8 +206,53 @@
 				569C30CF2059F79B00C1A19D /* Extensions.swift */,
 				56AE584B20907D31002F3C51 /* CoreDataManager.swift */,
 				569C30D72061639F00C1A19D /* CustomNavigationView.swift */,
+				5685CDFE20A3E29300E4FCD1 /* RssParser.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5685CE0020A3EF3000E4FCD1 /* FinAidFormController */ = {
+			isa = PBXGroup;
+			children = (
+				5685CE0120A3EF4000E4FCD1 /* FinAidFormController.swift */,
+			);
+			path = FinAidFormController;
+			sourceTree = "<group>";
+		};
+		5685CE0720A3F65600E4FCD1 /* NotifcationsControllerExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				5685CE0820A3F66D00E4FCD1 /* NotificationsController+SetupUI.swift */,
+				5685CE0A20A3F67D00E4FCD1 /* NotificationsController+UITableView.swift */,
+			);
+			path = NotifcationsControllerExtensions;
+			sourceTree = "<group>";
+		};
+		5685CE0C20A3F73200E4FCD1 /* NotificationsDeleteController */ = {
+			isa = PBXGroup;
+			children = (
+				56AE584D209162BF002F3C51 /* NotificationsDeleteController.swift */,
+				5685CE0D20A3F74E00E4FCD1 /* NotificationsDeleteController+SetupUI.swift */,
+				5685CE0F20A3F75E00E4FCD1 /* NotificationsDeleteController+Handlers.swift */,
+			);
+			path = NotificationsDeleteController;
+			sourceTree = "<group>";
+		};
+		5685CE1120A3F80200E4FCD1 /* LoginControllerExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				5685CE1720A3F91800E4FCD1 /* LoginController+SetupUI.swift */,
+			);
+			path = LoginControllerExtensions;
+			sourceTree = "<group>";
+		};
+		5685CE1220A3F81400E4FCD1 /* RegisterControllerExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				5685CE1320A3F85300E4FCD1 /* RegisterController+SetupUI.swift */,
+				5685CE1520A3F86700E4FCD1 /* RegisterController+Handlers.swift */,
+			);
+			path = RegisterControllerExtensions;
 			sourceTree = "<group>";
 		};
 		569C30D92061721200C1A19D /* HomeControllerExtensions */ = {
@@ -227,7 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				56AE5826208F1FF1002F3C51 /* NotificationsController.swift */,
-				56AE584D209162BF002F3C51 /* NotificationsDeleteController.swift */,
+				5685CE0C20A3F73200E4FCD1 /* NotificationsDeleteController */,
+				5685CE0720A3F65600E4FCD1 /* NotifcationsControllerExtensions */,
 			);
 			path = NotificationsController;
 			sourceTree = "<group>";
@@ -254,6 +326,7 @@
 		56AE583B20901611002F3C51 /* FinAidController */ = {
 			isa = PBXGroup;
 			children = (
+				5685CE0020A3EF3000E4FCD1 /* FinAidFormController */,
 				56AE583C20901611002F3C51 /* FinAidControllerExtensions */,
 				56AE583F20901611002F3C51 /* FinAidController.swift */,
 			);
@@ -318,7 +391,7 @@
 				569C30DF206DB4DF00C1A19D /* ContactController */,
 				56AE5825208F1FB7002F3C51 /* NotificationsController */,
 				569C30DC206B32F800C1A19D /* HomeController */,
-				5685CDF620A2C16200E4FCD1 /* LoginController */,
+				5685CDF620A2C16200E4FCD1 /* LoginRegisterController */,
 				56B5D4EF2059DADB00381FF6 /* Main.storyboard */,
 				56B5D4F22059DADB00381FF6 /* Assets.xcassets */,
 				56B5D4F42059DADB00381FF6 /* LaunchScreen.storyboard */,
@@ -445,6 +518,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FAARM/Pods-FAARM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireRSSParser/AlamofireRSSParser.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -452,6 +527,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireRSSParser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -496,9 +573,11 @@
 				564F557D20853BC00060E974 /* CalendarController+getJSON.swift in Sources */,
 				56AE5838208FB9B0002F3C51 /* AdmissionsController.swift in Sources */,
 				5685CDF820A2C19100E4FCD1 /* RegisterController.swift in Sources */,
+				5685CE0620A3F60800E4FCD1 /* CalendarAddController+Handlers.swift in Sources */,
 				56AE5821208F1CF4002F3C51 /* FAARMDataModels.xcdatamodeld in Sources */,
 				569C30DE206C49BE00C1A19D /* HomeSliderView.swift in Sources */,
 				564F558320859FD20060E974 /* UserInputView.swift in Sources */,
+				5685CE1020A3F75E00E4FCD1 /* NotificationsDeleteController+Handlers.swift in Sources */,
 				56B06CB02094632800B524AF /* RegistrarControllerSetup.swift in Sources */,
 				56AE584120901612002F3C51 /* FinAidControllerSetup.swift in Sources */,
 				56B06CAF2094632800B524AF /* RegistrarController.swift in Sources */,
@@ -509,18 +588,27 @@
 				56B06CB12094632800B524AF /* RegistrarControllerHelper.swift in Sources */,
 				569C30D2205B978C00C1A19D /* HomeHeaderCell.swift in Sources */,
 				56AE5839208FB9B0002F3C51 /* AdmissionsControllerSetup.swift in Sources */,
+				5685CE0420A3F5B200E4FCD1 /* CalendarController+SetupUI.swift in Sources */,
+				5685CE0920A3F66D00E4FCD1 /* NotificationsController+SetupUI.swift in Sources */,
 				569C30E6206DB7FF00C1A19D /* ContactController+SetupUI.swift in Sources */,
 				56AE5827208F1FF1002F3C51 /* NotificationsController.swift in Sources */,
 				569C30DB2061724500C1A19D /* HomeController+BuildCollectionView.swift in Sources */,
 				56AE583A208FB9B0002F3C51 /* AdmissionsControllerHelper.swift in Sources */,
 				569C30D82061639F00C1A19D /* CustomNavigationView.swift in Sources */,
+				5685CE1820A3F91800E4FCD1 /* LoginController+SetupUI.swift in Sources */,
+				5685CE0220A3EF4000E4FCD1 /* FinAidFormController.swift in Sources */,
+				5685CDFF20A3E29300E4FCD1 /* RssParser.swift in Sources */,
 				569C30E4206DB59B00C1A19D /* ContactControllerHelpers.swift in Sources */,
 				56AE584220901612002F3C51 /* FinAidController.swift in Sources */,
+				5685CE0B20A3F67D00E4FCD1 /* NotificationsController+UITableView.swift in Sources */,
 				569C30E1206DB50600C1A19D /* ContactController.swift in Sources */,
 				56E4C8112080865A00ECEE9A /* CalendarCell.swift in Sources */,
+				5685CE1420A3F85300E4FCD1 /* RegisterController+SetupUI.swift in Sources */,
+				5685CE0E20A3F74E00E4FCD1 /* NotificationsDeleteController+SetupUI.swift in Sources */,
 				564F557F208598ED0060E974 /* MessageController.swift in Sources */,
 				569C30D02059F79B00C1A19D /* Extensions.swift in Sources */,
 				569C30E8206E017800C1A19D /* HomeController+Handlers.swift in Sources */,
+				5685CE1620A3F86700E4FCD1 /* RegisterController+Handlers.swift in Sources */,
 				5685CDFA20A2C1A300E4FCD1 /* LoginController.swift in Sources */,
 				56AE581E208EFB93002F3C51 /* CalendarAddController+SetupUI.swift in Sources */,
 				56B5D4EC2059DADB00381FF6 /* AppDelegate.swift in Sources */,

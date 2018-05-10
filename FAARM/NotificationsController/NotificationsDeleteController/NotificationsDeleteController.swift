@@ -1,16 +1,14 @@
 //
-//  DetailsController.swift
+//  NotificationsDeleteController.swift
 //  FAARM
 //
-//  Created by Christopher Villanueva on 4/18/18.
+//  Created by Christopher Villanueva on 4/25/18.
 //  Copyright © 2018 Christopher Villanueva. All rights reserved.
 //
 
 import UIKit
-import CoreData
-import Firebase
 
-class CalendarAddController: UIViewController {
+class NotificationsDeleteController: UIViewController {
     
     let detailsView: UIView = {
         let view = UIView()
@@ -19,6 +17,14 @@ class CalendarAddController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.masksToBounds = true
         return view
+    }()
+    
+    let dateLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.textAlignment = .center
+        label.backgroundColor = .ucmGold
+        return label
     }()
     
     lazy var cancelButton: UIButton = {
@@ -31,12 +37,12 @@ class CalendarAddController: UIViewController {
         return button
     }()
     
-    lazy var addButton: UIButton = {
+    lazy var deleteButton: UIButton = {
         let button = UIButton()
-        button.addTarget(self, action: #selector(handleAddToNotifications), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleDeleteFromNotifications), for: .touchUpInside)
         button.backgroundColor = .ucmGold
         button.titleLabel?.textColor = .white
-        button.setTitle("Add", for: .normal)
+        button.setTitle("Delete", for: .normal)
         button.layer.cornerRadius = 10
         return button
     }()
@@ -50,14 +56,6 @@ class CalendarAddController: UIViewController {
         return sv
     }()
     
-    let dateLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.textAlignment = .center
-        label.backgroundColor = .ucmGold
-        return label
-    }()
-
     let descriptionTextView: UITextView = {
         let textView = UITextView()
         textView.backgroundColor = .ucmBlue
@@ -68,42 +66,30 @@ class CalendarAddController: UIViewController {
         return textView
     }()
     
-    var timeInterval: Int?
-    var monthAbbrev: String?
-    var dayNumber: String?
-    var dayName: String?
-    var year: String?
+    var notificationsController: NotificationsController?
+    var indexPath: IndexPath?
     
-    var calendarController: CalendarController?
-    
-    var calendarEvent: CalendarEvent? {
+    var savedCalendarEvent: CalendarEvent? {
         didSet {
-           //titleLabel.text = calendarEvent?.name
-            if let dayName = calendarEvent?.dayName, let monthAbbrev = calendarEvent?.monthAbbrev, let dayNumber = calendarEvent?.dayNumber, let year = calendarEvent?.year {
+            //titleLabel.text = calendarEvent?.name
+            if let dayName = savedCalendarEvent?.dayName, let monthAbbrev = savedCalendarEvent?.monthAbbrev, let dayNumber = savedCalendarEvent?.dayNumber{
                 let attributedText = NSMutableAttributedString(string: "Date : ", attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 22), NSAttributedStringKey.foregroundColor: UIColor.white])
                 attributedText.append(NSAttributedString(string: "\(dayName), \(monthAbbrev) \(dayNumber)", attributes: [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 22), NSAttributedStringKey.foregroundColor: UIColor.white]))
                 dateLabel.attributedText = attributedText
-                self.monthAbbrev = monthAbbrev
-                self.dayNumber = dayNumber
-                self.dayName = dayName
-                self.year = year
+             //   self.monthAbbrev = monthAbbrev
+             //   self.dayNumber = dayNumber
             }
-            descriptionTextView.text = calendarEvent?.name
-            timeInterval = calendarEvent?.timeInterval
+            descriptionTextView.text = savedCalendarEvent?.name
+            
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
     }
-    
-    
-   
+
 }
-
-
 
 

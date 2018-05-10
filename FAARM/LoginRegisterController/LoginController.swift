@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginController: UIViewController {
     
@@ -28,17 +29,7 @@ class LoginController: UIViewController {
        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
     }()
-    
-    let logoContainerView: UIView = {
-        let view = UIView()
-        let logoImageView = UIImageView(image: #imageLiteral(resourceName: "Homescreen_TOP"))
-        logoImageView.contentMode = .scaleAspectFill
-     //   logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-     //   logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 16).isActive = true
-        view.backgroundColor = .ucmBlue
-        return view
-    }()
-    
+
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .white
@@ -48,7 +39,7 @@ class LoginController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 14)
         textField.isUserInteractionEnabled = true
-        //textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return textField
     }()
     
@@ -61,7 +52,7 @@ class LoginController: UIViewController {
         textField.isSecureTextEntry = true
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 14)
-      //  textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return textField
     }()
     
@@ -72,7 +63,7 @@ class LoginController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-   //     button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         button.isEnabled = false
         return button
     }()
@@ -89,7 +80,23 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        self.hideKeyboardWhenTappedAround()
     }
+    
+    @objc private func handleLogin() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            
+            if let error = error {
+                print("Failed to sign in: ", error)
+                return
+            }
+            print("Successfully logged in: ", user?.uid ?? "")
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     
     @objc private func handleShowSignUp() {
         let registerController = RegisterController()
@@ -97,35 +104,25 @@ class LoginController: UIViewController {
         present(registerController, animated: true, completion: nil)
     }
     
+    // Checks to see if all form fields have values entered
+    // and correspondingly changes the button color
+    @objc private func handleTextInputChange() {
+        let isFormValid = emailTextField.text?.count ?? 0 > 0 && passwordTextField.text?.count ?? 0 > 0
+        
+        if isFormValid {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = .ucmGold
+        } else {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = .lightGray
+        }
+        
+    }
+    
     @objc func handleDismiss() {
         dismiss(animated: true, completion: nil)
     }
-    
-    func setupUI() {
-        
-        view.backgroundColor = .ucmBlue
-        
-        // Add Custom navigation bar and anchor it to this UIView
-        let customNavigationBar = CustomNavigationView()
-        view.addSubview(customNavigationBar)
-        customNavigationBar.anchorNavBar(view: self.view)
-        
-        view.addSubview(dontHaveAccountButton)
-    //    view.addSubview(logoContainerView)
-        view.addSubview(returnArrow)
-        dontHaveAccountButton.anchor(top: nil, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBotton: 0, right: view.rightAnchor, paddingRight: 0, width: 0, height: 50)
-        
-   //     logoContainerView.anchor(top: view.topAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: view.rightAnchor, paddingRight: 0, width: 0, height: 200)
-        
-        returnArrow.anchor(top: customNavigationBar.bottomAnchor, paddingTop: 10, left: view.leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: nil, paddingRight: 0, width: 75, height: 75)
-        
-        inputsStackView.addArrangedSubview(emailTextField)
-        inputsStackView.addArrangedSubview(passwordTextField)
-        inputsStackView.addArrangedSubview(loginButton)
-        
-        view.addSubview(inputsStackView)
-        inputsStackView.anchor(top: returnArrow.bottomAnchor, paddingTop: 40, left: view.safeAreaLayoutGuide.leftAnchor, paddingLeft: 40, bottom: nil, paddingBotton: 0, right: view.safeAreaLayoutGuide.rightAnchor, paddingRight: 40, width: 0, height: 180)
-    }
+
 }
 
 

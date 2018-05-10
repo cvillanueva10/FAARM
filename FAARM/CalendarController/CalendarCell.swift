@@ -64,10 +64,10 @@ class CalendarCell: UITableViewCell {
         }
     }
     
-    var savedEvent: SavedEvent? {
+    var savedCalendarEvent: CalendarEvent? {
         didSet {
-            titleLabel.text = savedEvent?.title
-            if let monthAbbrev = savedEvent?.monthAbbrev, let dayNumber = savedEvent?.dayNumber, let year = savedEvent?.year, let dayName = savedEvent?.dayName {
+            titleLabel.text = savedCalendarEvent?.name
+            if let monthAbbrev = savedCalendarEvent?.monthAbbrev, let dayNumber = savedCalendarEvent?.dayNumber, let year = savedCalendarEvent?.year, let dayName = savedCalendarEvent?.dayName {
                 dateLabel.text = "\(monthAbbrev) \(year)"
                 dayNameLabel.text = "\(dayName) \(dayNumber)"
             }

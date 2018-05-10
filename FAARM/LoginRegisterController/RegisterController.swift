@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -18,18 +19,6 @@ class RegisterController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         return button
     }()
     
-    let logoContainerView: UIView = {
-        let view = UIView()
-        let logoImageView = UIImageView(image: #imageLiteral(resourceName: "Homescreen_TOP"))
-        logoImageView.contentMode = .scaleAspectFill
-        view.addSubview(logoImageView)
-        logoImageView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: view.rightAnchor, paddingRight: 0, width: 0, height: 100)
-        //   logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        //   logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 16).isActive = true
-        view.backgroundColor = .ucmBlue
-        return view
-    }()
-    
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .white
@@ -39,7 +28,7 @@ class RegisterController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 14)
         textField.isUserInteractionEnabled = true
-    //    textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return textField
     }()
     
@@ -52,7 +41,7 @@ class RegisterController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         textField.attributedPlaceholder = attributedPlaceholder
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 14)
-       // textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return textField
     }()
     
@@ -65,7 +54,7 @@ class RegisterController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         textField.isSecureTextEntry = true
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 14)
-     //   textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return textField
     }()
     
@@ -84,7 +73,7 @@ class RegisterController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-     //   button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         button.isEnabled = false
         return button
     }()
@@ -116,7 +105,7 @@ class RegisterController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 14)
         textField.inputView = userTypePickerView
-        // textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return textField
     }()
     
@@ -127,45 +116,11 @@ class RegisterController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
         setupUI()
     }
     
-    @objc private func handleShowLogin() {
-        dismiss(animated: true, completion: nil)
-    }
     
-    @objc private func handleDismiss() {
-        dismiss(animated: true) {
-             self.loginController?.handleDismiss()
-        }
-       
-    }
-    
-    
-    func setupUI() {
-        view.backgroundColor = .ucmBlue
-        
-        // Add Custom navigation bar and anchor it to this UIView
-        let customNavigationBar = CustomNavigationView()
-        view.addSubview(customNavigationBar)
-        customNavigationBar.anchorNavBar(view: self.view)
-        
-        view.addSubview(alreadyHaveAccountButton)
-        view.addSubview(returnArrow)
-        alreadyHaveAccountButton.anchor(top: nil, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBotton: 0, right: view.rightAnchor, paddingRight: 0, width: 0, height: 50)
-        
-        returnArrow.anchor(top: customNavigationBar.bottomAnchor, paddingTop: 10, left:  view.leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: nil, paddingRight: 0, width: 75, height: 75)
-        
-        
-        inputsStackView.addArrangedSubview(emailTextField)
-        inputsStackView.addArrangedSubview(usernameTextField)
-        inputsStackView.addArrangedSubview(passwordTextField)
-        inputsStackView.addArrangedSubview(userTypeTextField)
-        inputsStackView.addArrangedSubview(signUpButton)
-        
-        view.addSubview(inputsStackView)
-        inputsStackView.anchor(top: returnArrow.bottomAnchor, paddingTop: 40, left: view.safeAreaLayoutGuide.leftAnchor, paddingLeft: 40, bottom: nil, paddingBotton: 0, right: view.safeAreaLayoutGuide.rightAnchor, paddingRight: 40, width: 0, height: 300)
-    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -178,6 +133,10 @@ class RegisterController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let label = "\(userTypes[row])"
         return label
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.userTypeTextField.text = "\(userTypes[row])"
     }
     
 }

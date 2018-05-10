@@ -39,23 +39,32 @@ extension CalendarController {
                                 calendarEvent.dayName = dateArray[3]
                                 calendarEvent.year = dateArray[4]
                                 
-                                guard let monthIndexString = calendarEvent.monthNum else { continue }
-                                
-                                guard let monthIndex = Int(monthIndexString) else { continue }
-                                
-                                if (!self.starterSet){
-                                    self.starterIndex = monthIndex
-                                    self.starterSet = true
-                                }
-                                var index = monthIndex - self.starterIndex
-                                if (index < 0){
-                                    index += 12
-                                }
+//                                guard let monthIndexString = calendarEvent.monthNum else { continue }
+//
+//                                guard let monthIndex = Int(monthIndexString) else { continue }
+//
+//                                if (!self.starterSet){
+//                                    self.starterIndex = monthIndex
+//                                    self.starterSet = true
+//                                }
+//                                var index = monthIndex - self.starterIndex
+//                                if (index < 0){
+//                                    index += 12
+//                                }
                                 //print(index)
                                // self.allEvents[index].append(calendarEvent)
+                                let timeInterval = self.getTimeIntervalValue(calendarEvent: calendarEvent)
+                                calendarEvent.timeInterval = timeInterval
                                 self.calendarEvents.append(calendarEvent)
                                 
-                                self.sortCalendarEvents()
+                                self.calendarEvents.sort(by: { (ce1, ce2) -> Bool in
+                                    guard let timeOne = ce1.timeInterval else { return false }
+                                    guard let timeTwo = ce2.timeInterval else { return false }
+                                    return timeOne < timeTwo
+                                })
+                                
+                                
+                                //self.sortCalendarEvents()
                                 
                                 
                                 
@@ -70,26 +79,38 @@ extension CalendarController {
             }.resume()
     }
     
-    func sortCalendarEvents() {
-
-        self.calendarEvents.sort(by: { (ce1, ce2) -> Bool in
-            guard let firstDayString = ce1.dayNumber else { return false }
-            guard let secondDayString = ce2.dayNumber else { return false }
-            guard let firstMonthString = ce1.monthNum else { return false }
-            guard let secondMonthString = ce2.monthNum else { return false }
-            guard let firstYearString = ce1.year else { return false }
-            guard let secondYearString = ce2.year else { return false }
-            guard let firstDay = Int(firstDayString) else { return false }
-            guard let secondDay = Int(secondDayString) else { return false }
-            guard let firstMonth = Int(firstMonthString) else { return false }
-            guard let secondMonth = Int(secondMonthString) else { return false }
-            guard let firstYear = Int(firstYearString) else { return false }
-            guard let secondYear = Int(secondYearString) else { return false }
-            let firstNum = firstYear * 365 + firstMonth * 30 + firstDay
-            let secondNum = secondYear * 365 + secondMonth * 30 + secondDay
-            
-            return firstNum < secondNum
-        })
+//    func sortCalendarEvents() {
+//
+//        self.calendarEvents.sort(by: { (ce1, ce2) -> Bool in
+//            guard let firstDayString = ce1.dayNumber else { return false }
+//            guard let secondDayString = ce2.dayNumber else { return false }
+//            guard let firstMonthString = ce1.monthNum else { return false }
+//            guard let secondMonthString = ce2.monthNum else { return false }
+//            guard let firstYearString = ce1.year else { return false }
+//            guard let secondYearString = ce2.year else { return false }
+//            guard let firstDay = Int(firstDayString) else { return false }
+//            guard let secondDay = Int(secondDayString) else { return false }
+//            guard let firstMonth = Int(firstMonthString) else { return false }
+//            guard let secondMonth = Int(secondMonthString) else { return false }
+//            guard let firstYear = Int(firstYearString) else { return false }
+//            guard let secondYear = Int(secondYearString) else { return false }
+//            let firstNum = firstYear * 365 + firstMonth * 30 + firstDay
+//            let secondNum = secondYear * 365 + secondMonth * 30 + secondDay
+//
+//            return firstNum < secondNum
+//        })
+//
+//    }
+    
+    private func getTimeIntervalValue(calendarEvent: CalendarEvent) -> Int {
+        guard let firstDayString = calendarEvent.dayNumber else { return -1 }
+        guard let firstMonthString = calendarEvent.monthNum else { return -1 }
+        guard let firstYearString = calendarEvent.year else { return -1}
+        guard let firstDay = Int(firstDayString) else { return -1 }
+        guard let firstMonth = Int(firstMonthString) else { return -1}
+        guard let firstYear = Int(firstYearString) else { return -1}
+        let firstNum = firstYear * 365 + firstMonth * 30 + firstDay
+        return firstNum
         
     }
     

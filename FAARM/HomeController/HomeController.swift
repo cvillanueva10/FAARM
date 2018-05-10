@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireRSSParser
 
 let bodyId = "bodyId"
 let headerId = "headerId"
@@ -25,6 +27,10 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        RSSParser.getRSSFeedResponse(path: "https://studentsfirst.ucmerced.edu/events/feed") { (rssFeed: RSSFeed?, status: NetworkResponseStatus) in
+            print(rssFeed) // it will be nil if status == .error
+        }
         
        setupCollectionView()
     }

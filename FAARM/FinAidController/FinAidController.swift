@@ -48,10 +48,13 @@ class FinAidController: UICollectionViewController {
     
     
     @objc func handleFinAidForms() {
-        let comingSoonAlert = UIAlertController(title: "Coming Soon", message: "This feature will be implemented at a later date", preferredStyle: .alert)
-        comingSoonAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(comingSoonAlert, animated: true, completion: nil)
-        }
+//        let comingSoonAlert = UIAlertController(title: "Coming Soon", message: "This feature will be implemented at a later date", preferredStyle: .alert)
+//        comingSoonAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        present(comingSoonAlert, animated: true, completion: nil)
+        
+        let finAidFormController = FinAidFormController()
+        present(finAidFormController, animated: true, completion: nil)
+    }
     
     
     @objc func handleFinWebsite() {

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class NotificationsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -27,6 +28,15 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
         return button
     }()
     
+    lazy var profileButton: UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "usericon").withRenderingMode(.alwaysTemplate), for: .normal)
+        button.addTarget(self, action: #selector(handleLogout), for: .touchUpInside)
+        button.tintColor = .white
+        //button.backgroundColor = .ucmBlue
+        return button
+    }()
+    
     let headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Saved Events"
@@ -38,7 +48,7 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
         return label
     }()
     
-    var savedEvents = [SavedEvent]()
+    var savedCalendarEvents = [CalendarEvent]()
     
     override func viewDidLoad() {
         view.backgroundColor = .ucmBlue
@@ -47,108 +57,66 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
         fetchSavedEvents()
     }
     
+    @objc func handleLogout(){
+        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Log Out" , style: .destructive, handler: { (_) in
+            
+            do {
+                try  Auth.auth().signOut()
+                self.dismiss(animated: true, completion: nil)
+//                let loginController = LoginController()
+//                let navigationController = UINavigationController(rootViewController: loginController)
+//                self.present(navigationController, animated: true, completion: nil)
+                
+            } catch let error {
+                print("Failed to sign out: ", error)
+            }
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel" , style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
     // This function fetches the events that have been added to the users
     // notifications and displays them on the tableView
     func fetchSavedEvents() {
         
-        let context = CoreDataManager.shared.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<SavedEvent>(entityName: "SavedEvent")
-        
-        do {
-            let savedEvents = try context.fetch(fetchRequest)
-            self.savedEvents = savedEvents
-            self.tableView.reloadData()
-        } catch let fetchError {
-            print("Failed to fetch events: \(fetchError)")
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let reference = Database.database().reference().child("notifications").child(uid)
+        reference.queryOrdered(byChild: "timeInterval").observe(.childAdded, with: { (snapshot) in
+            
+            guard let dictionary = snapshot.value as? [String: Any] else { return }
+            let savedCalendarEvent = CalendarEvent(dictionary: dictionary)
+            self.savedCalendarEvents.append(savedCalendarEvent)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+        }) { (err) in
+            print("Failed to fetch ordered posts: ", err)
         }
     }
     
-    func setupUI() {
-        
-        let customNavigationBar = setupNavBar(imageForLogo: #imageLiteral(resourceName: "Notifications-1"), viewForAnchor: view)
-        
-        view.addSubview(returnButton)
-        returnButton.anchor(top: customNavigationBar.bottomAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: nil, paddingRight: 0, width: 75, height: 75)
-        
-        view.addSubview(headerLabel)
-        headerLabel.anchor(top: customNavigationBar.bottomAnchor, paddingTop: 0, left: returnButton.rightAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: view.safeAreaLayoutGuide.rightAnchor, paddingRight: 0, width: 0, height: 75)
-        
-        
-        view.addSubview(tableView)
-        tableView.anchor(top: headerLabel.bottomAnchor, paddingTop: 0, left: view.leftAnchor, paddingLeft: 0, bottom: view.bottomAnchor, paddingBotton: 0, right: view.rightAnchor, paddingRight: 0, width: 0, height: 0)
-        
-        tableView.register(CalendarCell.self, forCellReuseIdentifier: cellId)
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
+   
     
     @objc func handleDeleteSavedEvent(indexPath: IndexPath){
         
-        let savedEvent = self.savedEvents[indexPath.row]
-        self.savedEvents.remove(at: indexPath.row)
-        self.tableView.deleteRows(at: [indexPath], with: .automatic)
-        
-        let context = CoreDataManager.shared.persistentContainer.viewContext
-        context.delete(savedEvent)
-        do {
-            try  context.save()
-        } catch let saveError {
-            print("Failed to save deleting context: \(saveError)")
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let delete_key = savedCalendarEvents[indexPath.item].timeInterval
+        let userNotificationReference = Database.database().reference().child("notifications").child(uid)
+        let query = userNotificationReference.queryOrdered(byChild: "timeInterval").queryEqual(toValue: delete_key)
+        query.observe(.childAdded) { (snapshot) in
+            snapshot.ref.removeValue()
         }
+        self.savedCalendarEvents.remove(at: indexPath.row)
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     
     @objc func handleDismiss() {
         dismiss(animated: true, completion: nil)
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let notificationsDeleteController = NotificationsDeleteController()
-        notificationsDeleteController.modalPresentationStyle = .overFullScreen
-        notificationsDeleteController.modalTransitionStyle = .crossDissolve
-        notificationsDeleteController.savedEvent = savedEvents[indexPath.item]
-        notificationsDeleteController.notificationsController = self
-        notificationsDeleteController.indexPath = indexPath
-        present(notificationsDeleteController, animated: true, completion: nil)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CalendarCell
-        cell.savedEvent = savedEvents[indexPath.item]
-        return cell
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return savedEvents.count
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = IndentedLabel()
-        //label.text = "Upcoming Deadlines"
-        label.backgroundColor = .ucmGold
-        label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        return label
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let label = UILabel()
-        label.text = "No events saved"
-        label.textColor = .white
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 22)
-        return label
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return savedEvents.count == 0 ? 150 : 0
-    }
+
     
 }
