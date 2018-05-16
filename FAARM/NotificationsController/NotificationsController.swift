@@ -33,7 +33,7 @@ class NotificationsController: UIViewController, UITableViewDelegate, UITableVie
         button.setImage(#imageLiteral(resourceName: "usericon").withRenderingMode(.alwaysTemplate), for: .normal)
         button.addTarget(self, action: #selector(handleLogout), for: .touchUpInside)
         button.tintColor = .white
-        //button.backgroundColor = .ucmBlue
+        button.backgroundColor = .ucmBlue
         return button
     }()
     
