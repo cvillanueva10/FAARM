@@ -53,6 +53,11 @@ class CalendarCell: UITableViewCell {
         return view
     }()
     
+    /* This code block is meant to work with CalendarController
+     * It works in hand with function cellForItem in CalendarController+TableView.swift
+     * When this variable is assigned in that function, we update the values of this particular cell
+     * according to the values in this CalendarEvent object.
+     */
     var calendarEvent: CalendarEvent? {
         didSet {
             titleLabel.text = calendarEvent?.name
@@ -64,6 +69,11 @@ class CalendarCell: UITableViewCell {
         }
     }
     
+    /* This code block is meant to work with NotificationsController
+     * It works in hand with function cellForItem in NotificationsController+UITableView.swift
+     * When this variable is assigned in that function, we update the values of this particular cell
+     * according to the values in this CalendarEvent object.
+     */
     var savedCalendarEvent: CalendarEvent? {
         didSet {
             titleLabel.text = savedCalendarEvent?.name
@@ -73,11 +83,18 @@ class CalendarCell: UITableViewCell {
             }
         }
     }
-        
     
-    
+    // Initialization function
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        setupUI()
+    }
+    
+    /* setupUI:
+     * Self explanatory. This functions adds and anchors of the components of the UI
+     */
+    private func setupUI() {
         
         backgroundColor = .ucmBlue
         
@@ -98,7 +115,7 @@ class CalendarCell: UITableViewCell {
         
         addSubview(goldBottomDividerView)
         goldBottomDividerView.anchor(top: titleLabel.bottomAnchor, paddingTop: 0, left: leftAnchor, paddingLeft: 0, bottom: nil, paddingBotton: 0, right: rightAnchor, paddingRight: 0, width: 0, height: 2)
-        
+
     }
     
     

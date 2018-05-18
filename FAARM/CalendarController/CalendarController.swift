@@ -10,12 +10,14 @@ import UIKit
 
 class CalendarController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // Create the table view for our calendar
     let tableView: UITableView = {
         let tv = UITableView(frame: .zero)
         tv.backgroundColor = .ucmBlue
         return tv
     }()
     
+    // Create the return button
     lazy var returnButton: UIButton = {
         let button = UIButton()
         button.setImage(#imageLiteral(resourceName: "back_arrow").withRenderingMode(.alwaysTemplate), for: .normal)
@@ -25,6 +27,7 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
         return button
     }()
     
+    // Create the header label
     let headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Upcoming Deadlines"
@@ -38,11 +41,17 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
     
     let cellId = "cellId"
     let calendarUrl = "https://www.googleapis.com/calendar/v3/calendars/ucsfcworker@gmail.com/events?key=AIzaSyAIhwddROqkHVggMRyX_XLG4H5TqlC65Zs"
+    
+    // This is the tool that helps us parse and
+    // make sense of the dates we get from
     let dateFormatter = DateFormatter()
     
+    /* This array holds our calendar entires we fetch
+     * them from our database, we then use this array
+     * to fill in the entries for our tableView
+     */
     var calendarEvents = [CalendarEvent]()
-    var starterIndex: Int = 0
-    var starterSet: Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +60,7 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
         fetchCalendarEvents()
     }
     
+    // Dismiss this view controller
     @objc func handleDismiss() {
         dismiss(animated: true, completion: nil)
     }

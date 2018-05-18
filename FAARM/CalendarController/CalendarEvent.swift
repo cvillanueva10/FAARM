@@ -8,6 +8,13 @@
 
 import UIKit
 
+/* class CalendarEvent:
+ * This class serves as a model for our calendar entries
+ * As we grab the data from our database, we create
+ * instances of this class and fill them into an array
+ * so they can fill our table view later
+ */
+
 struct CalendarEvent {
     
     var name: String?

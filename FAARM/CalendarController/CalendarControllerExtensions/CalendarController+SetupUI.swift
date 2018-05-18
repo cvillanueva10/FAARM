@@ -10,8 +10,13 @@ import UIKit
 
 extension CalendarController {
     
+    /* setupUI:
+     * Self explanatory. This function adds all the views into our UI
+     * and anchors them accordingly. Return button and header label
+     * make up the upper areas and then the table view takes over
+     * the rest
+     */
     func setupUI() {
-        
         view.backgroundColor = .ucmBlue
         let customNavigationBar = setupNavBar(imageForLogo: #imageLiteral(resourceName: "Calendar Tab-1"), viewForAnchor: view)
         

@@ -121,38 +121,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FAARM/CalendarController/CalendarControllerExtensions/CalendarController+getJSON.swift"
-            timestampString = "547616493.7878751"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "fetchCalendarEvents()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FAARM/CalendarController/CalendarControllerExtensions/CalendarController+getJSON.swift"
-            timestampString = "547616493.7879471"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "fetchCalendarEvents()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "FAARM/ContactController/ContactFormController.swift"
             timestampString = "545628811.1206059"
             startingColumnNumber = "9223372036854775807"
@@ -241,6 +209,84 @@
             endingLineNumber = "123"
             landmarkName = "handleDismiss()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FAARM/CalendarController/CalendarController.swift"
+            timestampString = "548301961.952727"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "CalendarController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FAARM.CalendarController.calendarEvents.getter : Swift.Array&lt;FAARM.CalendarEvent&gt;"
+                  moduleName = "FAARM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christophervillanueva/Desktop/FAARM/FAARM/CalendarController/CalendarController.swift"
+                  timestampString = "548301963.963854"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FAARM.CalendarController.calendarEvents.setter : Swift.Array&lt;FAARM.CalendarEvent&gt;"
+                  moduleName = "FAARM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christophervillanueva/Desktop/FAARM/FAARM/CalendarController/CalendarController.swift"
+                  timestampString = "548301963.966846"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FAARM.CalendarController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; FAARM.CalendarController"
+                  moduleName = "FAARM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christophervillanueva/Desktop/FAARM/FAARM/CalendarController/CalendarController.swift"
+                  timestampString = "548301963.970075"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "875">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FAARM.CalendarController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;FAARM.CalendarController&gt;"
+                  moduleName = "FAARM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christophervillanueva/Desktop/FAARM/FAARM/CalendarController/CalendarController.swift"
+                  timestampString = "548301963.9726779"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "811">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
