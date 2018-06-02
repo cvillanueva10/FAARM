@@ -17,7 +17,7 @@ extension UINavigationController {
 }
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -44,9 +44,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Registered for Notifications: ", deviceToken)
     }
     
+  
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("FCM token: " + fcmToken)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
+    
+    
+    
     private func attemptRegisterForNotifications(application: UIApplication) {
         
         print("Notifications")
+        
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
         
         // User Notifications Auth for iOS 10+ 
         let options: UNAuthorizationOptions = [.alert, .badge, .sound]
@@ -66,8 +81,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         application.registerForRemoteNotifications()
-        
-        
     }
 
 }

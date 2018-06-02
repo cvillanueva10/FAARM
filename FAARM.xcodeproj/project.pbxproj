@@ -30,8 +30,8 @@
 		5685CE1420A3F85300E4FCD1 /* RegisterController+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CE1320A3F85300E4FCD1 /* RegisterController+SetupUI.swift */; };
 		5685CE1620A3F86700E4FCD1 /* RegisterController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CE1520A3F86700E4FCD1 /* RegisterController+Handlers.swift */; };
 		5685CE1820A3F91800E4FCD1 /* LoginController+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685CE1720A3F91800E4FCD1 /* LoginController+SetupUI.swift */; };
+		5698201620C24D3700643FF2 /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5698201520C24D3700643FF2 /* HomeHeaderCell.swift */; };
 		569C30D02059F79B00C1A19D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30CF2059F79B00C1A19D /* Extensions.swift */; };
-		569C30D2205B978C00C1A19D /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30D1205B978C00C1A19D /* HomeHeaderCell.swift */; };
 		569C30D4205B9B1F00C1A19D /* HomeBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30D3205B9B1F00C1A19D /* HomeBodyCell.swift */; };
 		569C30D82061639F00C1A19D /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30D72061639F00C1A19D /* CustomNavigationView.swift */; };
 		569C30DB2061724500C1A19D /* HomeController+BuildCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C30DA2061724500C1A19D /* HomeController+BuildCollectionView.swift */; };
@@ -89,8 +89,8 @@
 		5685CE1320A3F85300E4FCD1 /* RegisterController+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterController+SetupUI.swift"; sourceTree = "<group>"; };
 		5685CE1520A3F86700E4FCD1 /* RegisterController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterController+Handlers.swift"; sourceTree = "<group>"; };
 		5685CE1720A3F91800E4FCD1 /* LoginController+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginController+SetupUI.swift"; sourceTree = "<group>"; };
+		5698201520C24D3700643FF2 /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeHeaderCell.swift; path = /Users/christophervillanueva/Desktop/FAARM/FAARM/View/HomeHeaderCell.swift; sourceTree = "<absolute>"; };
 		569C30CF2059F79B00C1A19D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		569C30D1205B978C00C1A19D /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
 		569C30D3205B9B1F00C1A19D /* HomeBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBodyCell.swift; sourceTree = "<group>"; };
 		569C30D72061639F00C1A19D /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
 		569C30DA2061724500C1A19D /* HomeController+BuildCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeController+BuildCollectionView.swift"; sourceTree = "<group>"; };
@@ -138,226 +138,78 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5619FA572072B1F2006B7C85 /* HomeControllerCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				569C30D1205B978C00C1A19D /* HomeHeaderCell.swift */,
-				569C30D3205B9B1F00C1A19D /* HomeBodyCell.swift */,
-			);
-			path = HomeControllerCollectionView;
-			sourceTree = "<group>";
-		};
-		5640ED0320873C9400BE1FB1 /* CalendarAddController */ = {
-			isa = PBXGroup;
-			children = (
-				5640ED0420873CB900BE1FB1 /* CalendarAddController.swift */,
-				56AE581D208EFB92002F3C51 /* CalendarAddController+SetupUI.swift */,
-				5685CE0520A3F60800E4FCD1 /* CalendarAddController+Handlers.swift */,
-			);
-			path = CalendarAddController;
-			sourceTree = "<group>";
-		};
-		564F557B20853BA20060E974 /* CalendarControllerExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				564F557C20853BC00060E974 /* CalendarController+getJSON.swift */,
-				5640ED012087384800BE1FB1 /* CalendarController+TableView.swift */,
-				5685CE0320A3F5B200E4FCD1 /* CalendarController+SetupUI.swift */,
-			);
-			path = CalendarControllerExtensions;
-			sourceTree = "<group>";
-		};
-		564F558420859FFB0060E974 /* MessageController */ = {
-			isa = PBXGroup;
-			children = (
-				564F557E208598ED0060E974 /* MessageController.swift */,
-				564F558020859AF10060E974 /* MessageView.swift */,
-				564F558220859FD20060E974 /* UserInputView.swift */,
-			);
-			path = MessageController;
-			sourceTree = "<group>";
-		};
-		5655CB8820798C66000599E5 /* CalendarController */ = {
-			isa = PBXGroup;
-			children = (
-				5655CB8920798C81000599E5 /* CalendarController.swift */,
-				56855357207DABB500170885 /* CalendarEvent.swift */,
-				56E4C8102080865A00ECEE9A /* CalendarCell.swift */,
-				564F557B20853BA20060E974 /* CalendarControllerExtensions */,
-				5640ED0320873C9400BE1FB1 /* CalendarAddController */,
-			);
-			path = CalendarController;
-			sourceTree = "<group>";
-		};
-		5685CDF620A2C16200E4FCD1 /* LoginRegisterController */ = {
-			isa = PBXGroup;
-			children = (
-				5685CDF720A2C19100E4FCD1 /* RegisterController.swift */,
-				5685CDF920A2C1A300E4FCD1 /* LoginController.swift */,
-				5685CE1120A3F80200E4FCD1 /* LoginControllerExtensions */,
-				5685CE1220A3F81400E4FCD1 /* RegisterControllerExtensions */,
-			);
-			path = LoginRegisterController;
-			sourceTree = "<group>";
-		};
 		5685CDFB20A2D0CB00E4FCD1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				569C30CF2059F79B00C1A19D /* Extensions.swift */,
+				569C30E3206DB59B00C1A19D /* ContactControllerHelpers.swift */,
+				56AE5837208FB9B0002F3C51 /* AdmissionsControllerHelper.swift */,
 				56AE584B20907D31002F3C51 /* CoreDataManager.swift */,
 				569C30D72061639F00C1A19D /* CustomNavigationView.swift */,
+				569C30CF2059F79B00C1A19D /* Extensions.swift */,
+				56AE583D20901611002F3C51 /* FinAidControllerHelper.swift */,
+				56B06CAE2094632800B524AF /* RegistrarControllerHelper.swift */,
 				5685CDFE20A3E29300E4FCD1 /* RssParser.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		5685CE0020A3EF3000E4FCD1 /* FinAidFormController */ = {
+		5698201220C24C2600643FF2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5685CE0120A3EF4000E4FCD1 /* FinAidFormController.swift */,
+				56855357207DABB500170885 /* CalendarEvent.swift */,
 			);
-			path = FinAidFormController;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		5685CE0720A3F65600E4FCD1 /* NotifcationsControllerExtensions */ = {
+		5698201320C24C2A00643FF2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5685CE0820A3F66D00E4FCD1 /* NotificationsController+SetupUI.swift */,
-				5685CE0A20A3F67D00E4FCD1 /* NotificationsController+UITableView.swift */,
-			);
-			path = NotifcationsControllerExtensions;
-			sourceTree = "<group>";
-		};
-		5685CE0C20A3F73200E4FCD1 /* NotificationsDeleteController */ = {
-			isa = PBXGroup;
-			children = (
-				56AE584D209162BF002F3C51 /* NotificationsDeleteController.swift */,
-				5685CE0D20A3F74E00E4FCD1 /* NotificationsDeleteController+SetupUI.swift */,
-				5685CE0F20A3F75E00E4FCD1 /* NotificationsDeleteController+Handlers.swift */,
-			);
-			path = NotificationsDeleteController;
-			sourceTree = "<group>";
-		};
-		5685CE1120A3F80200E4FCD1 /* LoginControllerExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				5685CE1720A3F91800E4FCD1 /* LoginController+SetupUI.swift */,
-			);
-			path = LoginControllerExtensions;
-			sourceTree = "<group>";
-		};
-		5685CE1220A3F81400E4FCD1 /* RegisterControllerExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				5685CE1320A3F85300E4FCD1 /* RegisterController+SetupUI.swift */,
-				5685CE1520A3F86700E4FCD1 /* RegisterController+Handlers.swift */,
-			);
-			path = RegisterControllerExtensions;
-			sourceTree = "<group>";
-		};
-		569C30D92061721200C1A19D /* HomeControllerExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				569C30DA2061724500C1A19D /* HomeController+BuildCollectionView.swift */,
-				569C30E7206E017800C1A19D /* HomeController+Handlers.swift */,
-			);
-			path = HomeControllerExtensions;
-			sourceTree = "<group>";
-		};
-		569C30DC206B32F800C1A19D /* HomeController */ = {
-			isa = PBXGroup;
-			children = (
-				56B5D4ED2059DADB00381FF6 /* HomeController.swift */,
+				56E4C8102080865A00ECEE9A /* CalendarCell.swift */,
+				569C30D3205B9B1F00C1A19D /* HomeBodyCell.swift */,
+				5698201520C24D3700643FF2 /* HomeHeaderCell.swift */,
 				569C30DD206C49BE00C1A19D /* HomeSliderView.swift */,
-				5619FA572072B1F2006B7C85 /* HomeControllerCollectionView */,
-				569C30D92061721200C1A19D /* HomeControllerExtensions */,
+				564F558020859AF10060E974 /* MessageView.swift */,
+				564F558220859FD20060E974 /* UserInputView.swift */,
 			);
-			path = HomeController;
+			path = View;
 			sourceTree = "<group>";
 		};
-		569C30DF206DB4DF00C1A19D /* ContactController */ = {
-			isa = PBXGroup;
-			children = (
-				564F558420859FFB0060E974 /* MessageController */,
-				569C30E0206DB50600C1A19D /* ContactController.swift */,
-				569C30E2206DB55B00C1A19D /* ContactControllerExtensions */,
-			);
-			path = ContactController;
-			sourceTree = "<group>";
-		};
-		569C30E2206DB55B00C1A19D /* ContactControllerExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				569C30E3206DB59B00C1A19D /* ContactControllerHelpers.swift */,
-				569C30E5206DB7FF00C1A19D /* ContactController+SetupUI.swift */,
-			);
-			path = ContactControllerExtensions;
-			sourceTree = "<group>";
-		};
-		56AE5825208F1FB7002F3C51 /* NotificationsController */ = {
-			isa = PBXGroup;
-			children = (
-				56AE5826208F1FF1002F3C51 /* NotificationsController.swift */,
-				5685CE0C20A3F73200E4FCD1 /* NotificationsDeleteController */,
-				5685CE0720A3F65600E4FCD1 /* NotifcationsControllerExtensions */,
-			);
-			path = NotificationsController;
-			sourceTree = "<group>";
-		};
-		56AE5832208FB9B0002F3C51 /* AdmissionsController */ = {
+		5698201420C24C2E00643FF2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				56AE5834208FB9B0002F3C51 /* AdmissionsController.swift */,
-				56AE5835208FB9B0002F3C51 /* AdmissionsControllerExtensions */,
-			);
-			name = AdmissionsController;
-			path = FAARM/AdmissionsController;
-			sourceTree = SOURCE_ROOT;
-		};
-		56AE5835208FB9B0002F3C51 /* AdmissionsControllerExtensions */ = {
-			isa = PBXGroup;
-			children = (
 				56AE5836208FB9B0002F3C51 /* AdmissionsControllerSetup.swift */,
-				56AE5837208FB9B0002F3C51 /* AdmissionsControllerHelper.swift */,
-			);
-			path = AdmissionsControllerExtensions;
-			sourceTree = "<group>";
-		};
-		56AE583B20901611002F3C51 /* FinAidController */ = {
-			isa = PBXGroup;
-			children = (
-				5685CE0020A3EF3000E4FCD1 /* FinAidFormController */,
-				56AE583C20901611002F3C51 /* FinAidControllerExtensions */,
+				5640ED0420873CB900BE1FB1 /* CalendarAddController.swift */,
+				5685CE0520A3F60800E4FCD1 /* CalendarAddController+Handlers.swift */,
+				56AE581D208EFB92002F3C51 /* CalendarAddController+SetupUI.swift */,
+				5655CB8920798C81000599E5 /* CalendarController.swift */,
+				564F557C20853BC00060E974 /* CalendarController+getJSON.swift */,
+				5685CE0320A3F5B200E4FCD1 /* CalendarController+SetupUI.swift */,
+				5640ED012087384800BE1FB1 /* CalendarController+TableView.swift */,
+				569C30E0206DB50600C1A19D /* ContactController.swift */,
+				569C30E5206DB7FF00C1A19D /* ContactController+SetupUI.swift */,
 				56AE583F20901611002F3C51 /* FinAidController.swift */,
-			);
-			path = FinAidController;
-			sourceTree = "<group>";
-		};
-		56AE583C20901611002F3C51 /* FinAidControllerExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				56AE583D20901611002F3C51 /* FinAidControllerHelper.swift */,
+				5685CE0120A3EF4000E4FCD1 /* FinAidFormController.swift */,
 				56AE583E20901611002F3C51 /* FinAidControllerSetup.swift */,
-			);
-			path = FinAidControllerExtensions;
-			sourceTree = "<group>";
-		};
-		56B06CAA2094632800B524AF /* RegistrarController */ = {
-			isa = PBXGroup;
-			children = (
-				56B06CAB2094632800B524AF /* RegistrarController.swift */,
-				56B06CAC2094632800B524AF /* RegistrarControllerExtensions */,
-			);
-			path = RegistrarController;
-			sourceTree = "<group>";
-		};
-		56B06CAC2094632800B524AF /* RegistrarControllerExtensions */ = {
-			isa = PBXGroup;
-			children = (
+				56B5D4ED2059DADB00381FF6 /* HomeController.swift */,
+				569C30DA2061724500C1A19D /* HomeController+BuildCollectionView.swift */,
+				569C30E7206E017800C1A19D /* HomeController+Handlers.swift */,
+				5685CDF920A2C1A300E4FCD1 /* LoginController.swift */,
+				5685CE1720A3F91800E4FCD1 /* LoginController+SetupUI.swift */,
+				564F557E208598ED0060E974 /* MessageController.swift */,
+				56AE5826208F1FF1002F3C51 /* NotificationsController.swift */,
+				5685CE0820A3F66D00E4FCD1 /* NotificationsController+SetupUI.swift */,
+				5685CE0A20A3F67D00E4FCD1 /* NotificationsController+UITableView.swift */,
+				56AE584D209162BF002F3C51 /* NotificationsDeleteController.swift */,
+				5685CE0F20A3F75E00E4FCD1 /* NotificationsDeleteController+Handlers.swift */,
+				5685CE0D20A3F74E00E4FCD1 /* NotificationsDeleteController+SetupUI.swift */,
 				56B06CAD2094632800B524AF /* RegistrarControllerSetup.swift */,
-				56B06CAE2094632800B524AF /* RegistrarControllerHelper.swift */,
+				56B06CAB2094632800B524AF /* RegistrarController.swift */,
+				5685CDF720A2C19100E4FCD1 /* RegisterController.swift */,
+				5685CE1520A3F86700E4FCD1 /* RegisterController+Handlers.swift */,
+				5685CE1320A3F85300E4FCD1 /* RegisterController+SetupUI.swift */,
 			);
-			path = RegistrarControllerExtensions;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		56B5D4DF2059DADB00381FF6 = {
@@ -383,15 +235,10 @@
 			children = (
 				5638D1972093E0C5008D0757 /* FAARM.entitlements */,
 				56B5D4EB2059DADB00381FF6 /* AppDelegate.swift */,
+				5698201220C24C2600643FF2 /* Model */,
+				5698201320C24C2A00643FF2 /* View */,
+				5698201420C24C2E00643FF2 /* Controller */,
 				5685CDFB20A2D0CB00E4FCD1 /* Helpers */,
-				56B06CAA2094632800B524AF /* RegistrarController */,
-				56AE583B20901611002F3C51 /* FinAidController */,
-				56AE5832208FB9B0002F3C51 /* AdmissionsController */,
-				5655CB8820798C66000599E5 /* CalendarController */,
-				569C30DF206DB4DF00C1A19D /* ContactController */,
-				56AE5825208F1FB7002F3C51 /* NotificationsController */,
-				569C30DC206B32F800C1A19D /* HomeController */,
-				5685CDF620A2C16200E4FCD1 /* LoginRegisterController */,
 				56B5D4EF2059DADB00381FF6 /* Main.storyboard */,
 				56B5D4F22059DADB00381FF6 /* Assets.xcassets */,
 				56B5D4F42059DADB00381FF6 /* LaunchScreen.storyboard */,
@@ -509,7 +356,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "";
 		};
 		9B095311E692F0C5B798F69C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -522,6 +369,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireRSSParser/AlamofireRSSParser.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -531,6 +379,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireRSSParser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -586,7 +435,6 @@
 				56B5D4EE2059DADB00381FF6 /* HomeController.swift in Sources */,
 				56855358207DABB600170885 /* CalendarEvent.swift in Sources */,
 				56B06CB12094632800B524AF /* RegistrarControllerHelper.swift in Sources */,
-				569C30D2205B978C00C1A19D /* HomeHeaderCell.swift in Sources */,
 				56AE5839208FB9B0002F3C51 /* AdmissionsControllerSetup.swift in Sources */,
 				5685CE0420A3F5B200E4FCD1 /* CalendarController+SetupUI.swift in Sources */,
 				5685CE0920A3F66D00E4FCD1 /* NotificationsController+SetupUI.swift in Sources */,
@@ -611,6 +459,7 @@
 				5685CE1620A3F86700E4FCD1 /* RegisterController+Handlers.swift in Sources */,
 				5685CDFA20A2C1A300E4FCD1 /* LoginController.swift in Sources */,
 				56AE581E208EFB93002F3C51 /* CalendarAddController+SetupUI.swift in Sources */,
+				5698201620C24D3700643FF2 /* HomeHeaderCell.swift in Sources */,
 				56B5D4EC2059DADB00381FF6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
